@@ -9,11 +9,11 @@ services:
       - db_config.env
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python manage.py runserver 0.0.0.0:8888
     volumes:
       - .:/code
     ports:
-      - "8000:8000"
+      - "8888:8888"
     depends_on:
       - db
     env_file:
