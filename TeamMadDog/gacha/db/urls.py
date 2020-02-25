@@ -9,8 +9,9 @@ from .views import GetMonster
 urlpatterns = [
     path('', views.index, name='index'),
     path('user_create', CreateUserAPI.as_view(), name="createUser"),
-    path('get_userInfo', GetUserProfile.as_view(), name="getUser"),
+    path('userInfo', GetUserProfile.as_view(), name="getUser"),
 
-    path('get_character', GetCharacter.as_view(), name="getCharacter"),
-    path('get_monster', GetMonster.as_view(), name="getMonster")
+    path('character', GetCharacter.as_view(), name="getCharacter"),
+    path('monster', GetMonster.as_view(), name="getMonster"),
+    path('item', GetMonster.as_view(), name="getMonster")
 ]

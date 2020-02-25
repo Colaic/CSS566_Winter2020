@@ -17,24 +17,24 @@ def index(request):
 
 class GetMonster(GenericAPIView):
     def get(self, request, *args, **kwargs):
-        return HttpResponse(Monster.objects.filter(name=request.data['monsterName']))
+        return HttpResponse(Monster.objects.filter(name=request.query_params['monsterName']))
 
 
 class GetItem(GenericAPIView):
     def get(self, request, *args, **kwargs):
-        return HttpResponse(Item.objects.filter(id=request.data['itemId']))
+        return HttpResponse(Item.objects.filter(id=request.query_params['itemId']))
 
 
 class GetCharacter(GenericAPIView):
 
     def get(self, request, *args, **kwargs):
-        return HttpResponse(Character.objects.filter(id=request.data['characterId']))
+        return HttpResponse(Character.objects.filter(id=request.query_params['characterId']))
 
 
 class GetUserProfile(GenericAPIView):
 
     def get(self, request, *args, **kwargs):
-        return HttpResponse(UserProfile.objects.filter(id=request.data['userId']))
+        return HttpResponse(UserProfile.objects.filter(id=request.query_params['userId']))
 
 
 class CreateUserAPI(GenericAPIView):
