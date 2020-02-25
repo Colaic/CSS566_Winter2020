@@ -16,5 +16,9 @@ func _ready():
 #	pass
 
 func _on_LogInButton_button_up():
+	# TODO: Remove the api creation here, add code to get user and pass.
+	var connector = Api.new("testuser", "testpass")
+	connector.sign_up()
+	
 	get_tree().change_scene("res://UserProfile.tscn")
 	pass
