@@ -1,0 +1,11 @@
+# extraneous files generated in Godot
+
+*.import
+*.md5
+*.stex
+*Copy*
+
+
+# DB API
+
+db_config.env

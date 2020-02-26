@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/WelcomePageBackgound.jpg-539cd5d40230a4f7340a42527299e07a.stex"
+path="res://.import/GreenArcher.png-18249202dce19ee49d412dfde02c984d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/WelcomePageBackgound.jpg"
-dest_files=[ "res://.import/WelcomePageBackgound.jpg-539cd5d40230a4f7340a42527299e07a.stex" ]
+source_file="res://Gacha Images/Character Sprites/GreenArcher.png"
+dest_files=[ "res://.import/GreenArcher.png-18249202dce19ee49d412dfde02c984d.stex" ]
 
 [params]
 

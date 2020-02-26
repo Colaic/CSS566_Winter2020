@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/WelcomePageBackgound.jpg-539cd5d40230a4f7340a42527299e07a.stex"
+path="res://.import/BlueAssassin.png-c758b39df6854532b06e8a2b28eeb287.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/WelcomePageBackgound.jpg"
-dest_files=[ "res://.import/WelcomePageBackgound.jpg-539cd5d40230a4f7340a42527299e07a.stex" ]
+source_file="res://Gacha Images/Character Sprites/BlueAssassin.png"
+dest_files=[ "res://.import/BlueAssassin.png-c758b39df6854532b06e8a2b28eeb287.stex" ]
 
 [params]
 
