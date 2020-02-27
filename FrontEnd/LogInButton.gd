@@ -18,7 +18,7 @@ func _ready():
 func _on_LogInButton_button_up():
 	# TODO: Add code for logging in instead of signing up.
 	var server = get_node("/root/Api")
-	server.sign_up("CSTEST1", "CSTEST2")
+	server.sign_up("test1", "test2")
 	
 	get_tree().change_scene("res://UserProfile.tscn")
 	pass
