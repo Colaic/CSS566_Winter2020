@@ -16,5 +16,5 @@ func _ready():
 #	pass
 
 func _on_LogInButton_button_up():
-	get_tree().change_scene("res://UserProfile.tscn")
+	get_tree().change_scene("res://Homepage.tscn")
 	pass
