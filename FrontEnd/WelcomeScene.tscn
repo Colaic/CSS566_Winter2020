@@ -21,9 +21,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+
 [node name="WelcomePageBackgound" type="Sprite" parent="WelcomeScene/Control/TextureRect"]
 position = Vector2( 649.117, 372.193 )
 scale = Vector2( 0.404617, 0.383453 )
+
 texture = ExtResource( 1 )
 
 [node name="LoginButton" type="Button" parent="WelcomeScene"]
