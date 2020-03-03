@@ -3,12 +3,7 @@ import uuid
 from django.http import HttpResponse
 from django.shortcuts import render
 from rest_framework.generics import (CreateAPIView, GenericAPIView, ListAPIView, RetrieveAPIView, UpdateAPIView)
-from db.models import UserProfile
-from db.models import Backpack
-from db.models import Mission
-from db.models import Character
-from db.models import Item
-from db.models import Monster
+from db.models import *
 
 
 def index(request):
