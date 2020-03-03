@@ -19,7 +19,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!5q*v#ujpw6wkdynb%eb)-dc*231w5%z-jgcf(y^aht_@*(9h-'
+try:
+    SECRET_KEY = os.environ["SECRET_KEY"]
+    if len(SECRET_KEY) < 48:
+        raise KeyError
+except KeyError:
+    print("Error: environment variable SECRET_KEY must be set with more than 48 characters.")
+    exit(1)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

@@ -1,47 +1,36 @@
-import json
-import uuid
-from django.http import HttpResponse
-from django.shortcuts import render
-from rest_framework.generics import (CreateAPIView, GenericAPIView, ListAPIView, RetrieveAPIView, UpdateAPIView)
-from db.models import *
 from django.db import IntegrityError
+from django.http import HttpResponse
+from rest_framework.generics import (CreateAPIView, GenericAPIView, ListAPIView)
+
+from db.models import *
 
 
 def index(request):
-    return HttpResponse("Hello, world.")
+    return HttpResponse("API v0.2.2")
 
 
-class GetMonster(GenericAPIView):
+class GetMonster(ListAPIView):
     def get(self, request, *args, **kwargs):
         return HttpResponse(Monster.objects.filter(name=request.query_params['monsterName']))
 
 
-class GetItem(GenericAPIView):
+class GetItem(ListAPIView):
     def get(self, request, *args, **kwargs):
         return HttpResponse(Item.objects.filter(id=request.query_params['itemId']))
 
 
-class GetCharacter(GenericAPIView):
-
+class GetCharacter(ListAPIView):
     def get(self, request, *args, **kwargs):
         return HttpResponse(Character.objects.filter(id=request.query_params['characterId']))
 
 
-class GetUserProfile(GenericAPIView):
-
+class GetUserProfile(ListAPIView):
     def get(self, request, *args, **kwargs):
         return HttpResponse(UserProfile.objects.filter(id=request.query_params['userId']))
 
 
-class CreateUserAPI(GenericAPIView):
-    # def get_queryset(self, *args, **kwargs):
-    #     courses = Course.objects.filter(category=self.school_id)
-    #     if not self.is_manager():
-    #         courses = courses.filter(university_school=self.request.user)
-    #     return courses
-
+class CreateUserAPI(CreateAPIView):
     def post(self, request, *args, **kwargs):
-
         username = request.data['name']
         password = request.data['password']
 
@@ -51,23 +40,17 @@ class CreateUserAPI(GenericAPIView):
         # raise Exception when password is too short
         if len(password) < 4:
             return HttpResponse(Exception("password too short"), status=400)
-
         user = UserProfile(username=username
                            , password=password
-                           , currency=0
-                           )
+                           , currency=0)
         try:
             user.save()
         except IntegrityError as e:
             return HttpResponse("Duplicated username", status=400)
-        # except Exception as e:
-        #     return HttpResponse(e, status=500)
-
         return HttpResponse("User Created", status=200)
 
 
 class ChangePasswordAPI(GenericAPIView):
-
     def post(self, request, *args, **kwargs):
         username = request.data['name']
         oldPassword = request.data['oldPassword']
@@ -92,7 +75,6 @@ class ChangePasswordAPI(GenericAPIView):
 
 
 class SignInAPI(GenericAPIView):
-
     def post(self, request, *args, **kwargs):
         username = request.data['name']
         password = request.data['password']
