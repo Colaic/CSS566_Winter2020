@@ -41,7 +41,7 @@ class Item(models.Model):
     property = models.CharField(max_length=128)
 
 
-class Backpack(models.Model):
+class UserItem(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     item = models.OneToOneField(Item, on_delete=models.PROTECT)
     count = models.IntegerField()
@@ -49,9 +49,9 @@ class Backpack(models.Model):
 
 class UserProfile(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    username = models.CharField(max_length=50)
+    username = models.CharField(max_length=50, unique=True)
     password = models.CharField(max_length=128)
     currency = models.IntegerField()
     missionNum = models.OneToOneField(Mission, on_delete=models.PROTECT, blank=True, null=True)
-    characters = models.ManyToManyField(Character, blank=True, null=True)
-    backpack = models.OneToOneField(Backpack, on_delete=models.PROTECT, blank=True,null=True)
+    characters = models.ManyToManyField(Character)
+    items = models.ManyToManyField(UserItem)
