@@ -2,9 +2,6 @@ from django.urls import path
 
 from . import views
 from .views import *
-# from .views import GetUserProfile
-# from .views import GetCharacter
-# from .views import GetMonster
 
 urlpatterns = [
     path('', views.index, name='index'),
