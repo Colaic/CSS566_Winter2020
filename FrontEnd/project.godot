@@ -19,6 +19,10 @@ config/name="GotchaGameWelcome"
 run/main_scene="res://WelcomeScene.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Api="*res://Api.gd"
+
 [display]
 
 window/size/width=1280
