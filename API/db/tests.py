@@ -1,4 +1,6 @@
 from django.test import TestCase
+from django.urls import reverse
+
 from .models import *
 
 
@@ -31,3 +33,11 @@ class UserProfileTest(TestCase):
         self.assertEqual(tester.missionNum.reward, 10)
         self.assertEqual(tester.characters.count(), 0)
         self.assertEqual(tester.items.count(), 1)
+
+
+class APITest(TestCase):
+    def test_index(self):
+        response = self.client.get(reverse('index'))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Hello, world.")
+
