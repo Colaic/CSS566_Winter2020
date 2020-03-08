@@ -1,10 +1,7 @@
 from django.urls import path
 
 from . import views
-from .views import CreateUserAPI
-from .views import GetUserProfile
-from .views import GetCharacter
-from .views import GetMonster
+from .views import *
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -13,5 +10,7 @@ urlpatterns = [
 
     path('character', GetCharacter.as_view(), name="getCharacter"),
     path('monster', GetMonster.as_view(), name="getMonster"),
-    path('item', GetMonster.as_view(), name="getMonster")
+    path('item', GetMonster.as_view(), name="getMonster"),
+    path('change_password', ChangePasswordAPI.as_view(), name="changePassword"),
+    path('sign_in', SignInAPI.as_view(), name="signIn")
 ]

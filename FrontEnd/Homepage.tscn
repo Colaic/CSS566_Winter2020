@@ -1,0 +1,221 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Image/Homepage.jpg" type="Texture" id=1]
+[ext_resource path="res://Image/characters.png" type="Texture" id=2]
+[ext_resource path="res://Image/playerProfile.png" type="Texture" id=3]
+[ext_resource path="res://PlayerProfileButton.gd" type="Script" id=4]
+[ext_resource path="res://buttonCharacters.gd" type="Script" id=5]
+[ext_resource path="res://Image/storIcon.png" type="Texture" id=6]
+[ext_resource path="res://Image/library.png" type="Texture" id=7]
+[ext_resource path="res://Image/missions.png" type="Texture" id=8]
+[ext_resource path="res://ExitHomepageButton.gd" type="Script" id=9]
+[ext_resource path="res://Image/mp_horizontal_bar.png" type="Texture" id=10]
+[ext_resource path="res://Image/grey_horizontal_bar.png" type="Texture" id=11]
+[ext_resource path="res://MPProgressBar.gd" type="Script" id=12]
+[ext_resource path="res://Image/horizontal_bar.png" type="Texture" id=13]
+[ext_resource path="res://HPProgressBar.gd" type="Script" id=14]
+
+[node name="Homepage" type="Node"]
+
+[node name="HomePage" type="Node2D" parent="."]
+
+[node name="Control" type="Control" parent="HomePage"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="HomePage/Control"]
+position = Vector2( 639.625, 359.711 )
+scale = Vector2( 0.213354, 0.180008 )
+texture = ExtResource( 1 )
+
+[node name="PlayerProfielButton" type="Button" parent="HomePage"]
+margin_left = 218.817
+margin_top = 311.434
+margin_right = 318.817
+margin_bottom = 411.434
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="playerProfile" type="Sprite" parent="HomePage/PlayerProfielButton"]
+position = Vector2( 50.2769, 49.9991 )
+scale = Vector2( 0.95452, 0.967226 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="HomePage/PlayerProfielButton"]
+margin_left = 7.90796
+margin_top = 107.172
+margin_right = 91.908
+margin_bottom = 121.172
+text = "Player Profile"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttonCharacters" type="Button" parent="HomePage"]
+margin_left = 403.737
+margin_top = 311.344
+margin_right = 503.737
+margin_bottom = 411.344
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="characterlistIcon" type="Sprite" parent="HomePage/buttonCharacters"]
+position = Vector2( 50.0636, 50.1485 )
+scale = Vector2( 0.105543, 0.108265 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="HomePage/buttonCharacters"]
+margin_left = 18.4794
+margin_top = 107.276
+margin_right = 85.4794
+margin_bottom = 121.276
+text = "Characters"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttonStore" type="Button" parent="HomePage"]
+margin_left = 589.547
+margin_top = 310.727
+margin_right = 689.547
+margin_bottom = 410.727
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="storeIcon" type="Sprite" parent="HomePage/buttonStore"]
+position = Vector2( 50.5134, 53.4684 )
+scale = Vector2( 0.0855189, 0.0931499 )
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="HomePage/buttonStore"]
+margin_left = 33.565
+margin_top = 107.727
+margin_right = 73.565
+margin_bottom = 121.727
+text = "Store"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttonMissions" type="Button" parent="HomePage"]
+margin_left = 775.751
+margin_top = 311.437
+margin_right = 875.751
+margin_bottom = 411.437
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="missionsIcon" type="Sprite" parent="HomePage/buttonMissions"]
+position = Vector2( 49.9482, 50.0505 )
+scale = Vector2( 0.0894002, 0.088341 )
+texture = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="HomePage/buttonMissions"]
+margin_left = 22.2726
+margin_top = 107.723
+margin_right = 79.2726
+margin_bottom = 121.723
+text = "Missions"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttonLibrary" type="Button" parent="HomePage"]
+margin_left = 961.069
+margin_top = 311.218
+margin_right = 1061.07
+margin_bottom = 411.218
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="libraryIcon" type="Sprite" parent="HomePage/buttonLibrary"]
+position = Vector2( 50.1072, 50.6188 )
+scale = Vector2( 0.174288, 0.150689 )
+texture = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="HomePage/buttonLibrary"]
+margin_left = 30.0753
+margin_top = 108.697
+margin_right = 73.0753
+margin_bottom = 122.697
+text = "Library"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitHomepageButton" type="Button" parent="HomePage"]
+margin_left = 1195.48
+margin_top = 20.9286
+margin_right = 1256.48
+margin_bottom = 78.9286
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+text = "Exit"
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HPProgressBar" type="TextureProgress" parent="HomePage"]
+margin_left = 46.3181
+margin_top = 13.2419
+margin_right = 599.318
+margin_bottom = 70.2419
+min_value = 1.0
+value = 40.0
+texture_under = ExtResource( 11 )
+texture_progress = ExtResource( 13 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HomePage/HPProgressBar"]
+margin_left = -30.2919
+margin_top = 22.0095
+margin_right = -0.29187
+margin_bottom = 36.0095
+text = "HP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MPProgressBar" type="TextureProgress" parent="HomePage"]
+margin_left = 46.0728
+margin_top = 74.6232
+margin_right = 605.073
+margin_bottom = 132.623
+value = 60.0
+texture_under = ExtResource( 11 )
+texture_progress = ExtResource( 10 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HomePage/MPProgressBar"]
+anchor_left = -0.00154575
+anchor_right = -0.00154575
+margin_left = -30.4852
+margin_top = 19.0
+margin_right = -2.4852
+margin_bottom = 39.0
+text = "MP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="HomePage/PlayerProfielButton" to="HomePage/PlayerProfielButton" method="_on_PlayerProfielButton_pressed"]
+[connection signal="pressed" from="HomePage/ExitHomepageButton" to="HomePage/ExitHomepageButton" method="_on_ExitHomepageButton_pressed"]
