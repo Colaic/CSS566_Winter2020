@@ -218,4 +218,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="HomePage/PlayerProfielButton" to="HomePage/PlayerProfielButton" method="_on_PlayerProfielButton_pressed"]
+[connection signal="pressed" from="HomePage/buttonCharacters" to="HomePage/buttonCharacters" method="_on_buttonCharacters_pressed"]
 [connection signal="pressed" from="HomePage/ExitHomepageButton" to="HomePage/ExitHomepageButton" method="_on_ExitHomepageButton_pressed"]

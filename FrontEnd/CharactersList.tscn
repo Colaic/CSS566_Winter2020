@@ -1,0 +1,300 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Image/Homepage.jpg" type="Texture" id=1]
+[ext_resource path="res://Image/Characters/PlayerCharacters/c1_GreenWarrior.png" type="Texture" id=2]
+[ext_resource path="res://Image/Characters/PlayerCharacters/c2_BlueAssassin.png" type="Texture" id=3]
+[ext_resource path="res://Image/Characters/PlayerCharacters/c3_GreenArcher.png" type="Texture" id=4]
+[ext_resource path="res://Image/Characters/PlayerCharacters/c5_Magician.png" type="Texture" id=5]
+[ext_resource path="res://Image/Characters/PlayerCharacters/c6_Ant.png" type="Texture" id=6]
+[ext_resource path="res://Image/Characters/PlayerCharacters/c4_Druid.png" type="Texture" id=7]
+[ext_resource path="res://Image/Characters/PlayerCharacters/c7_Unicorn.png" type="Texture" id=8]
+[ext_resource path="res://Image/Characters/PlayerCharacters/c8_SilverKnight.png" type="Texture" id=9]
+[ext_resource path="res://Image/Characters/PlayerCharacters/c9_GoldenKnight.png" type="Texture" id=10]
+[ext_resource path="res://Image/Characters/PlayerCharacters/c10_KingKnight.png" type="Texture" id=11]
+
+[node name="MenuPage" type="Sprite"]
+position = Vector2( 424, 184 )
+scale = Vector2( 0.216748, 0.182002 )
+texture = ExtResource( 1 )
+offset = Vector2( 996.551, 967.02 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="."]
+margin_left = -1637.83
+margin_top = -283.675
+margin_right = -1597.83
+margin_bottom = -243.675
+rect_scale = Vector2( 132.212, 69.1192 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Char1" type="Panel" parent="ItemList"]
+margin_left = 3.65564
+margin_top = 10.9413
+margin_right = 43.6556
+margin_bottom = 50.9413
+rect_scale = Vector2( 0.0169812, 0.030796 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="c1_GreenWarrior" type="Sprite" parent="ItemList/Char1"]
+position = Vector2( 22.8405, 23.1139 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="ItemList/Char1"]
+margin_left = -85.8175
+margin_top = 233.556
+margin_right = 4.18248
+margin_bottom = 264.556
+rect_scale = Vector2( 2.55185, 4.23824 )
+text = "Green Warrior
+"
+
+[node name="Char2" type="Panel" parent="ItemList"]
+margin_left = 9.67108
+margin_top = 10.5635
+margin_right = 49.6711
+margin_bottom = 50.5635
+rect_scale = Vector2( 0.0167753, 0.0309016 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="c2_BlueAssassin" type="Sprite" parent="ItemList/Char2"]
+position = Vector2( 3.09375, 34.2758 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="ItemList/Char2"]
+margin_left = -97.491
+margin_top = 232.068
+margin_right = -7.49095
+margin_bottom = 263.068
+rect_scale = Vector2( 2.58426, 4.18364 )
+text = "Blue Assassin"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Char3" type="Panel" parent="ItemList"]
+margin_left = 15.5718
+margin_top = 10.4654
+margin_right = 55.5718
+margin_bottom = 50.4654
+rect_scale = Vector2( 0.017434, 0.0290375 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="c3_GreenArcher" type="Sprite" parent="ItemList/Char3"]
+position = Vector2( -106.061, 53.9236 )
+scale = Vector2( 1.01861, 1.05291 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="ItemList/Char3"]
+margin_left = -88.0917
+margin_top = 282.139
+margin_right = 1.90829
+margin_bottom = 313.139
+rect_scale = Vector2( 2.58426, 4.18364 )
+text = "Green Archer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Char4" type="Panel" parent="ItemList"]
+margin_left = 22.0449
+margin_top = 11.4471
+margin_right = 62.0449
+margin_bottom = 51.4471
+rect_scale = Vector2( 0.0180203, 0.026616 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="c4_Druid" type="Sprite" parent="ItemList/Char4"]
+position = Vector2( -56.2404, -7.80933 )
+scale = Vector2( 1.04469, 1.15377 )
+texture = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="ItemList/Char4"]
+margin_left = -30.0674
+margin_top = 275.895
+margin_right = 59.9326
+margin_bottom = 306.895
+rect_scale = Vector2( 2.58426, 4.18364 )
+text = "Druid
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Char5" type="Panel" parent="ItemList"]
+margin_left = 27.8115
+margin_top = 10.0486
+margin_right = 67.8115
+margin_bottom = 50.0486
+rect_scale = Vector2( 0.0181629, 0.0309271 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="c5_Magician" type="Sprite" parent="ItemList/Char5"]
+position = Vector2( -23.0632, 30.059 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="ItemList/Char5"]
+margin_left = -55.8583
+margin_top = 267.272
+margin_right = 34.1417
+margin_bottom = 315.272
+rect_scale = Vector2( 2.58426, 4.18364 )
+text = "Magician
+
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Char6" type="Panel" parent="ItemList"]
+margin_left = 33.8102
+margin_top = 10.4197
+margin_right = 73.8102
+margin_bottom = 50.4197
+rect_scale = Vector2( 0.0201271, 0.0298528 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="c6_Ant" type="Sprite" parent="ItemList/Char6"]
+position = Vector2( -15.4923, 16.0844 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="ItemList/Char6"]
+margin_left = 5.25696
+margin_top = 280.683
+margin_right = 95.257
+margin_bottom = 328.683
+rect_scale = Vector2( 2.58426, 4.18364 )
+text = "Ant
+
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Char7" type="Panel" parent="ItemList"]
+margin_left = 3.72299
+margin_top = 29.7111
+margin_right = 43.723
+margin_bottom = 69.7111
+rect_scale = Vector2( 0.017307, 0.0261785 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="c7_Unicorn" type="Sprite" parent="ItemList/Char7"]
+position = Vector2( 40, -47.6222 )
+texture = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="ItemList/Char7"]
+margin_left = -38.6057
+margin_top = 249.185
+margin_right = 51.3943
+margin_bottom = 297.185
+rect_scale = Vector2( 2.58426, 4.18364 )
+text = "Unicorn
+
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Char8" type="Panel" parent="ItemList"]
+margin_left = 9.45636
+margin_top = 29.7109
+margin_right = 49.4564
+margin_bottom = 69.7109
+rect_scale = Vector2( 0.0173358, 0.0261785 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="c8_SilverKnight" type="Sprite" parent="ItemList/Char8"]
+position = Vector2( 52.9673, 49.934 )
+scale = Vector2( 0.751698, 0.838537 )
+texture = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="ItemList/Char8"]
+margin_left = -37.8578
+margin_top = 249.72
+margin_right = 52.1422
+margin_bottom = 297.72
+rect_scale = Vector2( 2.58426, 4.18364 )
+text = "Silver Knight"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Char9" type="Panel" parent="ItemList"]
+margin_left = 21.0809
+margin_top = 30.0704
+margin_right = 61.0809
+margin_bottom = 70.0704
+rect_scale = Vector2( 0.0173358, 0.0261785 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="c9_GoldenKnight" type="Sprite" parent="ItemList/Char9"]
+position = Vector2( 38.6063, 53.3857 )
+scale = Vector2( 0.718978, 0.813396 )
+texture = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="ItemList/Char9"]
+margin_left = -37.8578
+margin_top = 249.72
+margin_right = 52.1422
+margin_bottom = 297.72
+rect_scale = Vector2( 2.58426, 4.18364 )
+text = "Golden Knight
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Char10" type="Panel" parent="ItemList"]
+margin_left = 27.9906
+margin_top = 30.8446
+margin_right = 67.9906
+margin_bottom = 70.8446
+rect_scale = Vector2( 0.0173358, 0.0261785 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="c10_KingKnight" type="Sprite" parent="ItemList/Char10"]
+position = Vector2( 22.7761, 8.80823 )
+scale = Vector2( 0.681418, 0.862472 )
+texture = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="ItemList/Char10"]
+margin_left = -47.6003
+margin_top = 204.323
+margin_right = 42.3997
+margin_bottom = 252.323
+rect_scale = Vector2( 2.58426, 4.18364 )
+text = "King Knight
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
