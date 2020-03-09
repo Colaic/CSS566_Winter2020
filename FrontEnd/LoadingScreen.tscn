@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Image/WelcomePageBackgound.jpg" type="Texture" id=1]
+[ext_resource path="res://ReadyButton.gd" type="Script" id=2]
+
+[node name="Gotcha2D" type="Node2D"]
+
+[node name="LoadingScene" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="LoadingScene"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="LoadingScene/Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadingPageBackgound" type="Sprite" parent="LoadingScene/Control/TextureRect"]
+position = Vector2( 541, 632 )
+scale = Vector2( 0.404617, 0.383453 )
+texture = ExtResource( 1 )
+offset = Vector2( 269.68, -677.546 )
+
+[node name="ReadyButton" type="Button" parent="LoadingScene/Control"]
+margin_left = 582.0
+margin_top = 432.0
+margin_right = 729.0
+margin_bottom = 470.0
+text = "Start Game"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadingLabel" type="Label" parent="LoadingScene"]
+margin_left = 439.0
+margin_top = 360.0
+margin_right = 876.0
+margin_bottom = 435.0
+text = "Welcome to the CSS 566 Gacha Game!
+Please wait while the game loads...
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="LoadingScene/Control/ReadyButton" to="LoadingScene/Control/ReadyButton" method="_on_ReadyButton_button_up"]

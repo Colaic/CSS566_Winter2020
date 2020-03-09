@@ -28,7 +28,7 @@ func _on_SignupButton_button_up():
 	#Call signup from the API, and check if it was successufl.
 	if(server.signup(get_username(), get_password())):
 		#Change the scene if successful.
-		get_tree().change_scene("res://UserProfile.tscn")
+		get_tree().change_scene("res://LoadingScreen.tscn")
 	else:
 		set_status("Signup Failed")
 	
@@ -42,7 +42,7 @@ func _on_LoginButton_button_up():
 	#Call signup from the API, and check if it was successufl.
 	if(server.login(get_username(), get_password())):
 		#Change the scene if successful.
-		get_tree().change_scene("res://UserProfile.tscn")
+		get_tree().change_scene("res://LoadingScreen.tscn")
 	else:
 		set_status("Login Failed")
 	

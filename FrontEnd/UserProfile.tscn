@@ -38,10 +38,10 @@ __meta__ = {
 }
 
 [node name="UserProfileInfo" type="ColorRect" parent="."]
-margin_left = 32.1259
-margin_top = 102.118
-margin_right = 1235.13
-margin_bottom = 720.118
+margin_left = 32.0
+margin_top = 91.0
+margin_right = 1235.0
+margin_bottom = 701.0
 color = Color( 0.137255, 0.0666667, 0.2, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -63,6 +63,9 @@ margin_top = 200.225
 margin_right = 213.175
 margin_bottom = 227.225
 text = "Change"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="NicknameTextField" type="TextEdit" parent="UserProfileInfo"]
 margin_left = 368.0
@@ -78,6 +81,9 @@ margin_left = 368.0
 margin_top = 74.0
 margin_right = 618.0
 margin_bottom = 102.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="GenderLabel" type="Label" parent="UserProfileInfo"]
 margin_left = 300.391
@@ -85,12 +91,18 @@ margin_top = 81.7991
 margin_right = 347.391
 margin_bottom = 98.7991
 text = "Gender"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="LevelTextField" type="TextEdit" parent="UserProfileInfo"]
 margin_left = 367.287
 margin_top = 120.0
 margin_right = 618.287
 margin_bottom = 147.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="LevelLabel" type="Label" parent="UserProfileInfo"]
 margin_left = 313.932
@@ -117,6 +129,9 @@ margin_top = 171.26
 margin_right = 347.666
 margin_bottom = 185.26
 text = "Energy Level"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CurrencyTextField" type="TextEdit" parent="UserProfileInfo"]
 margin_left = 368.0
@@ -133,6 +148,9 @@ margin_top = 215.587
 margin_right = 347.218
 margin_bottom = 229.587
 text = "Currency"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CharactersListColor" type="ColorRect" parent="UserProfileInfo"]
 margin_left = 364.0
@@ -183,12 +201,15 @@ margin_top = 9.32159
 margin_right = 140.656
 margin_bottom = 23.3216
 text = "Collected Characters"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Avatar" type="Panel" parent="."]
 margin_left = 98.0
-margin_top = 135.0
+margin_top = 124.0
 margin_right = 259.0
-margin_bottom = 286.0
+margin_bottom = 275.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
