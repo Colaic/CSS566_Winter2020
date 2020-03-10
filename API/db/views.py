@@ -1,47 +1,42 @@
-import json
-import uuid
-from django.http import HttpResponse
-from django.shortcuts import render
-from rest_framework.generics import (CreateAPIView, GenericAPIView, ListAPIView, RetrieveAPIView, UpdateAPIView)
-from db.models import *
 from django.db import IntegrityError
+from django.http import HttpResponse
+from rest_framework.generics import (CreateAPIView, GenericAPIView, ListAPIView)
+
+from db.serializer import *
 
 
 def index(request):
-    return HttpResponse("Hello, world.")
+    return HttpResponse("API v0.3rc1")
 
 
-class GetMonster(GenericAPIView):
-    def get(self, request, *args, **kwargs):
-        return HttpResponse(Monster.objects.filter(name=request.query_params['monsterName']))
+class PermissionMixin(object):
+    def is_manager(self):
+        manager = User.objects.filter(username=self.request.user.username, is_superuser=True)
+        if manager:
+            return True
+        return False
 
 
-class GetItem(GenericAPIView):
-    def get(self, request, *args, **kwargs):
-        return HttpResponse(Item.objects.filter(id=request.query_params['itemId']))
+class GetPlayer(PermissionMixin, ListAPIView):
+    serializer_class = PlayerListSerializer
+
+    def get_queryset(self, *args, **kwargs):
+        if self.is_manager():
+            players = Player.objects
+        else:
+            players = Player.objects.filter(user=self.request.user)
+        return players
 
 
-class GetCharacter(GenericAPIView):
+class GetPlayerTest(PermissionMixin, ListAPIView):
+    serializer_class = PlayerListSerializer
 
-    def get(self, request, *args, **kwargs):
-        return HttpResponse(Character.objects.filter(id=request.query_params['characterId']))
-
-
-class GetUserProfile(GenericAPIView):
-
-    def get(self, request, *args, **kwargs):
-        return HttpResponse(UserProfile.objects.filter(id=request.query_params['userId']))
+    def get_queryset(self, *args, **kwargs):
+        return Player.objects
 
 
-class CreateUserAPI(GenericAPIView):
-    # def get_queryset(self, *args, **kwargs):
-    #     courses = Course.objects.filter(category=self.school_id)
-    #     if not self.is_manager():
-    #         courses = courses.filter(university_school=self.request.user)
-    #     return courses
-
+class CreateUserAPI(CreateAPIView):
     def post(self, request, *args, **kwargs):
-
         username = request.data['name']
         password = request.data['password']
 
@@ -51,23 +46,19 @@ class CreateUserAPI(GenericAPIView):
         # raise Exception when password is too short
         if len(password) < 4:
             return HttpResponse(Exception("password too short"), status=400)
-
-        user = UserProfile(username=username
-                           , password=password
-                           , currency=0
-                           )
+        user = User(username=username,
+                    password=password)
         try:
             user.save()
+            player = Player(user=user,
+                            currency=0)
+            player.save()
         except IntegrityError as e:
             return HttpResponse("Duplicated username", status=400)
-        # except Exception as e:
-        #     return HttpResponse(e, status=500)
-
         return HttpResponse("User Created", status=200)
 
 
 class ChangePasswordAPI(GenericAPIView):
-
     def post(self, request, *args, **kwargs):
         username = request.data['name']
         oldPassword = request.data['oldPassword']
@@ -78,29 +69,28 @@ class ChangePasswordAPI(GenericAPIView):
 
         # check if user exists or not
         try:
-            user = UserProfile.objects.get(username=username)
-        except UserProfile.DoesNotExist:
+            user = Player.objects.get(user__username=username)
+        except Player.DoesNotExist:
             return HttpResponse("User does not exists", status=400)
 
         # check the correctness of the old password
-        if user.password != oldPassword:
+        if not user.user.check_password(oldPassword):
             return HttpResponse("Password is wrong", status=400)
 
-        user.password = newPassword
-        user.save()
+        user.user.set_password(newPassword)
+        user.user.save()
         return HttpResponse("Password changed", status=200)
 
 
 class SignInAPI(GenericAPIView):
-
     def post(self, request, *args, **kwargs):
         username = request.data['name']
         password = request.data['password']
 
         # check if the username and password
         try:
-            UserProfile.objects.get(username=username, password=password)
-        except UserProfile.DoesNotExist:
+            Player.objects.get(user__username=username, user__password=password)
+        except Player.DoesNotExist:
             return HttpResponse("Wrong username or password", status=400)
 
         return HttpResponse("Signed in", status=200)
