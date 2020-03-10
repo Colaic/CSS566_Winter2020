@@ -30,6 +30,8 @@ except KeyError:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+CORS_ORIGIN_ALLOW_ALL = True
+
 ALLOWED_HOSTS = ['0.0.0.0',
                  '127.0.0.1',
                  'localhost',
@@ -40,6 +42,7 @@ ALLOWED_HOSTS = ['0.0.0.0',
 INSTALLED_APPS = [
     'db',
     'rest_framework',
+    'corsheaders',
     'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -52,6 +55,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -78,6 +82,12 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'gacha.wsgi.application'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases

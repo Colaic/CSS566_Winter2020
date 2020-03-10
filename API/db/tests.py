@@ -16,17 +16,18 @@ class UserProfileTest(TestCase):
         mission = Mission.objects.create(missionNum=0,
                                          cost=1,
                                          reward=10)
-        user = UserProfile.objects.create(id=uuid.uuid4(),
-                                          username="tester",
-                                          password="pwd",
-                                          currency="0",
-                                          missionNum=mission)
-        user.items.add(item)
+        user = User(username="tester",
+                    password="pwd")
+        user.save()
+        player = Player.objects.create(user=user,
+                                       currency="0",
+                                       missionNum=mission)
+        player.items.add(item)
 
     def test_user(self):
-        tester = UserProfile.objects.get(username="tester")
-        self.assertEqual(tester.username, "tester")
-        self.assertEqual(tester.password, "pwd")
+        tester = Player.objects.get(user__username="tester")
+        self.assertEqual(tester.user.username, "tester")
+        self.assertEqual(tester.user.password, "pwd")
         self.assertEqual(tester.currency, 0)
         self.assertEqual(tester.missionNum.missionNum, 0)
         self.assertEqual(tester.missionNum.cost, 1)
@@ -39,5 +40,4 @@ class APITest(TestCase):
     def test_index(self):
         response = self.client.get(reverse('index'))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "API v0.2.2")
-
+        self.assertContains(response, "API v0.3b")

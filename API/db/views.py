@@ -6,7 +6,7 @@ from db.models import *
 
 
 def index(request):
-    return HttpResponse("API v0.2.2")
+    return HttpResponse("API v0.3b")
 
 
 class GetMonster(ListAPIView):
@@ -26,7 +26,7 @@ class GetCharacter(ListAPIView):
 
 class GetUserProfile(ListAPIView):
     def get(self, request, *args, **kwargs):
-        return HttpResponse(UserProfile.objects.filter(id=request.query_params['userId']))
+        return HttpResponse(Player.objects.filter(user__username=request.query_params['username']))
 
 
 class CreateUserAPI(CreateAPIView):
@@ -40,11 +40,13 @@ class CreateUserAPI(CreateAPIView):
         # raise Exception when password is too short
         if len(password) < 4:
             return HttpResponse(Exception("password too short"), status=400)
-        user = UserProfile(username=username
-                           , password=password
-                           , currency=0)
+        user = User(username=username,
+                    password=password)
         try:
             user.save()
+            player = Player(user=user,
+                            currency=0)
+            player.save()
         except IntegrityError as e:
             return HttpResponse("Duplicated username", status=400)
         return HttpResponse("User Created", status=200)
@@ -61,15 +63,15 @@ class ChangePasswordAPI(GenericAPIView):
 
         # check if user exists or not
         try:
-            user = UserProfile.objects.get(username=username)
-        except UserProfile.DoesNotExist:
+            user = Player.objects.get(user__username=username)
+        except Player.DoesNotExist:
             return HttpResponse("User does not exists", status=400)
 
         # check the correctness of the old password
-        if user.password != oldPassword:
+        if user.user.password != oldPassword:
             return HttpResponse("Password is wrong", status=400)
 
-        user.password = newPassword
+        user.user.password = newPassword
         user.save()
         return HttpResponse("Password changed", status=200)
 
@@ -81,8 +83,8 @@ class SignInAPI(GenericAPIView):
 
         # check if the username and password
         try:
-            UserProfile.objects.get(username=username, password=password)
-        except UserProfile.DoesNotExist:
+            Player.objects.get(user__username=username, user__password=password)
+        except Player.DoesNotExist:
             return HttpResponse("Wrong username or password", status=400)
 
         return HttpResponse("Signed in", status=200)

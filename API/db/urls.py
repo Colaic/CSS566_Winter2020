@@ -12,5 +12,5 @@ urlpatterns = [
     path('monster', GetMonster.as_view(), name="getMonster"),
     path('item', GetMonster.as_view(), name="getMonster"),
     path('change_password', ChangePasswordAPI.as_view(), name="changePassword"),
-    path('sign_in', SignInAPI.as_view(), name="signIn")
+    path('sign_in', SignInAPI.as_view(), name="signIn"),
 ]

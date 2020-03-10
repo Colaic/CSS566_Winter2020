@@ -1,9 +1,13 @@
-from django.db import models
 import uuid
+
+from django.contrib.auth.models import User
+from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 
 class CharacterLevel(models.Model):
-    level = models.IntegerField(primary_key=True, editable=False)
+    level = models.IntegerField(primary_key=True, editable=True)
     hp = models.IntegerField()
     mp = models.IntegerField()
     attack = models.IntegerField()
@@ -28,7 +32,7 @@ class Monster(models.Model):
 
 
 class Mission(models.Model):
-    missionNum = models.IntegerField(primary_key=True, editable=False)
+    missionNum = models.IntegerField(primary_key=True, editable=True)
     cost = models.IntegerField()
     reward = models.IntegerField()
     monsters = models.ManyToManyField(Monster)
@@ -47,11 +51,9 @@ class UserItem(models.Model):
     count = models.IntegerField()
 
 
-class UserProfile(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    username = models.CharField(max_length=50, unique=True)
-    password = models.CharField(max_length=128)
-    currency = models.IntegerField()
+class Player(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    currency = models.IntegerField(default=0)
     missionNum = models.OneToOneField(Mission, on_delete=models.PROTECT, blank=True, null=True)
     characters = models.ManyToManyField(Character)
     items = models.ManyToManyField(UserItem)
