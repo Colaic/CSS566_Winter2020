@@ -13,5 +13,7 @@ docker-compose run web python3 manage.py createsuperuser
 Using the following command, you can run the test.py file and the process will be generated automatically:
 docker-compose run web python3 manage.py test
 
+In the db_config.env file, the last line is intentionally left as SECRET_KEY=fake. Please change the "fake" to be a 64-bit string of characters to make it work. Since it is local, you can change it to anything you want to, as long as it is a 64 bit string.
+
 
 
