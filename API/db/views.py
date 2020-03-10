@@ -2,31 +2,37 @@ from django.db import IntegrityError
 from django.http import HttpResponse
 from rest_framework.generics import (CreateAPIView, GenericAPIView, ListAPIView)
 
-from db.models import *
+from db.serializer import *
 
 
 def index(request):
-    return HttpResponse("API v0.3b")
+    return HttpResponse("API v0.3rc1")
 
 
-class GetMonster(ListAPIView):
-    def get(self, request, *args, **kwargs):
-        return HttpResponse(Monster.objects.filter(name=request.query_params['monsterName']))
+class PermissionMixin(object):
+    def is_manager(self):
+        manager = User.objects.filter(username=self.request.user.username, is_superuser=True)
+        if manager:
+            return True
+        return False
 
 
-class GetItem(ListAPIView):
-    def get(self, request, *args, **kwargs):
-        return HttpResponse(Item.objects.filter(id=request.query_params['itemId']))
+class GetPlayer(PermissionMixin, ListAPIView):
+    serializer_class = PlayerListSerializer
+
+    def get_queryset(self, *args, **kwargs):
+        if self.is_manager():
+            players = Player.objects
+        else:
+            players = Player.objects.filter(user=self.request.user)
+        return players
 
 
-class GetCharacter(ListAPIView):
-    def get(self, request, *args, **kwargs):
-        return HttpResponse(Character.objects.filter(id=request.query_params['characterId']))
+class GetPlayerTest(PermissionMixin, ListAPIView):
+    serializer_class = PlayerListSerializer
 
-
-class GetUserProfile(ListAPIView):
-    def get(self, request, *args, **kwargs):
-        return HttpResponse(Player.objects.filter(user__username=request.query_params['username']))
+    def get_queryset(self, *args, **kwargs):
+        return Player.objects
 
 
 class CreateUserAPI(CreateAPIView):
@@ -68,11 +74,11 @@ class ChangePasswordAPI(GenericAPIView):
             return HttpResponse("User does not exists", status=400)
 
         # check the correctness of the old password
-        if user.user.password != oldPassword:
+        if not user.user.check_password(oldPassword):
             return HttpResponse("Password is wrong", status=400)
 
-        user.user.password = newPassword
-        user.save()
+        user.user.set_password(newPassword)
+        user.user.save()
         return HttpResponse("Password changed", status=200)
 
 
