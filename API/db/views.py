@@ -46,8 +46,8 @@ class CreateUserAPI(CreateAPIView):
         # raise Exception when password is too short
         if len(password) < 4:
             return HttpResponse(Exception("password too short"), status=400)
-        user = User(username=username,
-                    password=password)
+        user = User(username=username)
+        user.set_password(password)
         try:
             user.save()
             player = Player(user=user,
