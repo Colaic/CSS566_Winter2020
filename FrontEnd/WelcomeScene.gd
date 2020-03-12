@@ -1,5 +1,7 @@
 extends Node
 
+var _user_signed_up = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -25,27 +27,35 @@ func _on_SignupButton_button_up():
 	#Get the object for the API.
 	var server = get_node("/root/Api")
 	
-	#Call signup from the API, and check if it was successufl.
-	if(server.signup(get_username(), get_password())):
+	#Call signup from the API.
+	var results = server.signup(get_username(), get_password())
+	
+	#Check if it was successful, and then update the label.
+	if(results["success"]):
 		#Change the scene if successful.
-		get_tree().change_scene("res://UserProfile.tscn")
+		set_status("Signup Successful. Please Login.")
+		_user_signed_up = true;
 	else:
-		set_status("Signup Failed")
+		set_status("Signup Failed. " + results["msg"])
 	
 	
 #A function which runs when the login button is pressed.
 func _on_LoginButton_button_up():	
-	
 	#Get the object for the API.
 	var server = get_node("/root/Api")
 	
-	#Call signup from the API, and check if it was successufl.
-	if(server.login(get_username(), get_password())):
-		#Change the scene if successful.
-		get_tree().change_scene("res://UserProfile.tscn")
-	else:
-		set_status("Login Failed")
+	#Call login from the API, and check if it was successful.
+	var results = server.login(get_username(), get_password())
 	
+	#Check if it was successful, and then change the scene.
+	if(results["success"]):		
+		#If the uesr signed up, take them to user profile. Otherwise to homepage.
+		if(server._user_signed_up):
+			get_tree().change_scene("res://UserProfile.tscn")
+		else:
+			get_tree().change_scene("res://Homepage.tscn")
+	else:
+		set_status("Login Failed. " + results["msg"])
 	
 #A function which runs when the exit button is pressed.
 func _on_Exit_button_up():
