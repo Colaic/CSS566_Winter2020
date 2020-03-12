@@ -41,7 +41,7 @@ func _on_LoginButton_button_up():
 	var response = server.login(get_username(), get_password())
 
 	#Change the scene if successful.
-	if(response["successful"]):
+	if(response["success"]):
 		get_tree().change_scene("res://Homepage.tscn")
 	else:
 		set_status(response["message"])
