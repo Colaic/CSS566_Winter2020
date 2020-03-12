@@ -40,4 +40,4 @@ class APITest(TestCase):
     def test_index(self):
         response = self.client.get(reverse('index'))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "API v0.3rc1")
+        self.assertContains(response, "API v0.3.1")

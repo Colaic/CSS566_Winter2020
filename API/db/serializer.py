@@ -3,7 +3,7 @@ from rest_framework.serializers import ModelSerializer, SerializerMethodField
 from db.models import *
 
 
-class PlayerListSerializer(ModelSerializer):
+class PlayerSerializer(ModelSerializer):
     username = SerializerMethodField()
     missionNum = SerializerMethodField()
     characters = SerializerMethodField()
@@ -32,7 +32,7 @@ class CharacterSerializer(ModelSerializer):
 
     class Meta:
         model = Character
-        fields = ('name',)
+        fields = ('id', 'name',)
 
 
 class UserItemSerializer(ModelSerializer):
@@ -43,5 +43,11 @@ class UserItemSerializer(ModelSerializer):
         fields = ('item', 'count')
 
     def get_item(self, obj):
-        return obj.item.name
+        return ItemSerializer(obj.item).data
 
+
+class ItemSerializer(ModelSerializer):
+
+    class Meta:
+        model = Item
+        fields = ('id', 'name')
