@@ -1,12 +1,12 @@
 from django.db import IntegrityError
 from django.http import HttpResponse
-from rest_framework.generics import (CreateAPIView, GenericAPIView, ListAPIView)
+from rest_framework.generics import (CreateAPIView, GenericAPIView, ListAPIView, UpdateAPIView)
 
 from db.serializer import *
 
 
 def index(request):
-    return HttpResponse("API v0.3rc1")
+    return HttpResponse("API v0.3.3")
 
 
 class PermissionMixin(object):
@@ -18,7 +18,7 @@ class PermissionMixin(object):
 
 
 class GetPlayer(PermissionMixin, ListAPIView):
-    serializer_class = PlayerListSerializer
+    serializer_class = PlayerSerializer
 
     def get_queryset(self, *args, **kwargs):
         if self.is_manager():
@@ -28,16 +28,21 @@ class GetPlayer(PermissionMixin, ListAPIView):
         return players
 
 
-class GetPlayerTest(PermissionMixin, ListAPIView):
-    serializer_class = PlayerListSerializer
+class ChangePlayer(PermissionMixin, UpdateAPIView):
+    serializer_class = PlayerSerializer
+    lookup_field = 'user__username'
 
     def get_queryset(self, *args, **kwargs):
-        return Player.objects
+        if self.is_manager():
+            players = Player.objects.select_related('user')
+        else:
+            players = Player.objects.filter(user=self.request.user).select_related('user')
+        return players
 
 
 class CreateUserAPI(CreateAPIView):
     def post(self, request, *args, **kwargs):
-        username = request.data['name']
+        username = request.data['username']
         password = request.data['password']
 
         # raise Exception when username is too short
@@ -60,7 +65,7 @@ class CreateUserAPI(CreateAPIView):
 
 class ChangePasswordAPI(GenericAPIView):
     def post(self, request, *args, **kwargs):
-        username = request.data['name']
+        username = request.data['username']
         oldPassword = request.data['oldPassword']
         newPassword = request.data['newPassword']
         # raise Exception when password is too short
@@ -80,17 +85,3 @@ class ChangePasswordAPI(GenericAPIView):
         user.user.set_password(newPassword)
         user.user.save()
         return HttpResponse("Password changed", status=200)
-
-
-class SignInAPI(GenericAPIView):
-    def post(self, request, *args, **kwargs):
-        username = request.data['name']
-        password = request.data['password']
-
-        # check if the username and password
-        try:
-            Player.objects.get(user__username=username, user__password=password)
-        except Player.DoesNotExist:
-            return HttpResponse("Wrong username or password", status=400)
-
-        return HttpResponse("Signed in", status=200)
