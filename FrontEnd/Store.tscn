@@ -1,0 +1,97 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/Coin.png-6d6a0e3563fb18360af9c2ceb67cb59e.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/Trophy.png-a8066c75727f30e7b3728de585bd386e.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/blue-potion.png-04ccd42f5cc83d6473224f45133f49c7.stex"
+
+[node name="UserProfile" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 0.916335, 0.849462 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_top = 0.00123316
+anchor_right = 1.0
+anchor_bottom = 1.00123
+margin_left = -1.4917
+margin_top = -0.727097
+margin_right = -1.4917
+margin_bottom = -0.727112
+color = Color( 0.2, 0.0784314, 0.239216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UserProfileInfo" type="ColorRect" parent="."]
+anchor_left = 2.98023e-09
+anchor_right = 2.98023e-09
+margin_left = 36.4911
+margin_top = 82.1053
+margin_right = 1239.5
+margin_bottom = 700.105
+color = Color( 0.137255, 0.0666667, 0.2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnergyListColor" type="ColorRect" parent="UserProfileInfo"]
+margin_left = 358.543
+margin_top = 318.532
+margin_right = 801.543
+margin_bottom = 552.532
+color = Color( 0.0784314, 0.0941176, 0.117647, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnergyGrid" type="GridContainer" parent="UserProfileInfo/EnergyListColor"]
+margin_left = 2.44785
+margin_top = -9.62027
+margin_right = 445.448
+margin_bottom = 224.38
+columns = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coin" type="Sprite" parent="UserProfileInfo/EnergyListColor/EnergyGrid"]
+position = Vector2( 32.7392, 141.266 )
+scale = Vector2( 0.143156, 0.14008 )
+texture = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="UserProfileInfo/EnergyListColor/EnergyGrid"]
+position = Vector2( 135.322, 140.677 )
+scale = Vector2( 0.0676467, 0.0786485 )
+texture = SubResource( 2 )
+
+[node name="HpAndMPList" type="ColorRect" parent="UserProfileInfo"]
+margin_left = 362.578
+margin_top = 56.3038
+margin_right = 805.578
+margin_bottom = 290.304
+color = Color( 0.0627451, 0.0588235, 0.0588235, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HpGrid" type="GridContainer" parent="UserProfileInfo/HpAndMPList"]
+margin_left = 369.693
+margin_top = -6.98745
+margin_right = 389.693
+margin_bottom = 26.0125
+
+[node name="Sprite" type="Sprite" parent="UserProfileInfo/HpAndMPList/HpGrid"]
+position = Vector2( -306.111, 64.7469 )
+scale = Vector2( 0.18425, 0.223038 )
+texture = SubResource( 3 )
