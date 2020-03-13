@@ -5,9 +5,10 @@ const _URL = "18.191.61.189"
 const _PORT = 8888
 
 #Constant addresses for the end points
-const _ADDR_TOKEN = "/api/token/"
+const _ADDR_TOKEN = "/api/token"
 const _ADDR_SIGNUP = "/db/player/create"
 const _ADDR_PLAYER = "/db/player"
+const _ADDR_CHPASS = "/db/player/change_password"
 
 # Class variables
 var _http = null
@@ -67,7 +68,7 @@ func signup(username, password):
 	print("Signing up user " + _user + "...")
 	
 	#Create the request with the given parameters, and make the post request.
-	var data = {"name" : _user, "password" : _pass}
+	var data = {"username" : _user, "password" : _pass}
 	var post_response = _post(_ADDR_SIGNUP, data)
 	
 	#Update the just signed up value.
@@ -76,6 +77,23 @@ func signup(username, password):
 	#Return the results back to the program
 	return {"success" : (post_response["code"] == 200), "msg": post_response["data"]}
 
+
+# A method for changing the password for the given username.
+func change_password(username, old_password, new_password):	
+	#Create the request with the given parameters, and make the post request.
+	var data = {"username" : username, "oldPassword" : old_password, "newPassword" : new_password}
+	var response = _post(_ADDR_CHPASS, data)
+	
+	#If it was successful, set the username and password to the updated values.
+	#And then return the success value and message.
+	if(response["code"] == 200):
+		_user = username
+		_pass = new_password
+		return {"success" : true, "msg": "Password changed."}
+		
+	#If we get here, there was an error, then print the error message.
+	return {"success" : false, "msg": response["data"]}
+	
 
 #A method for updating the player information.
 #Data is a dictionary of values for the keys that have to be updated.
