@@ -4,6 +4,11 @@ extends Node
 const _URL = "18.191.61.189"
 const _PORT = 8888
 
+#Constant addresses for the end points
+const _ADDR_TOKEN = "/api/token/"
+const _ADDR_SIGNUP = "/db/player/create"
+const _ADDR_PLAYER = "/db/player"
+
 # Class variables
 var _http = null
 var _user = null
@@ -19,16 +24,25 @@ var _user_just_signed_up = null
 # Called when the node enters the scene tree for the first time.
 func _init():
 	print("Connecting to the server...")
-	
+
 	#Initialize the required class variable.
-	var _user_just_signed_up = false
+	_user_just_signed_up = false
 	
 	#Initialize a new http client.
 	_http = HTTPClient.new()
 	
 	#Connect to it.
 	_http_connect()
-		
+	
+#A function which attemps to connect to the HTTP connection previously initialized.
+func _http_connect():
+	#Connect it to the host.
+	_http.connect_to_host(_URL, _PORT, false, true)
+	
+	# Wait until resolved and connected.
+	while _http.get_status() == HTTPClient.STATUS_CONNECTING or _http.get_status() == HTTPClient.STATUS_RESOLVING:
+		_http.poll()
+		OS.delay_msec(500)
 		
 #A method which authenticates the user.
 func login(username, password):
@@ -54,7 +68,7 @@ func signup(username, password):
 	
 	#Create the request with the given parameters, and make the post request.
 	var data = {"name" : _user, "password" : _pass}
-	var post_response = _post("/db/user_create", data)
+	var post_response = _post(_ADDR_SIGNUP, data)
 	
 	#Update the just signed up value.
 	_user_just_signed_up = true
@@ -63,21 +77,51 @@ func signup(username, password):
 	return {"success" : (post_response["code"] == 200), "msg": post_response["data"]}
 
 
-#A function which attemps to connect to the HTTP connection previously initialized.
-func _http_connect():
-	#Connect it to the host.
-	_http.connect_to_host(_URL, _PORT, false, true)
+#A method for updating the player information.
+#Data is a dictionary of values for the keys that have to be updated.
+func _update_player(data):
+	#Update the player information based on the passed data.
+	var response = _patch(_ADDR_PLAYER + "/" + _user + "/change", data)
 	
-	# Wait until resolved and connected.
-	while _http.get_status() == HTTPClient.STATUS_CONNECTING or _http.get_status() == HTTPClient.STATUS_RESOLVING:
-		_http.poll()
-		OS.delay_msec(500)
+	#If the token experied, update token and try again.
+	if(response["code"] == 401):
+		_update_tokens()
+		response = _patch(_ADDR_PLAYER + "/" + _user + "/change", data)
+		
+	#If it was successful, parse the data and return the dictionary.
+	if(response["code"] == 200):
+		return {"success" : true, "msg": JSON.parse(response["data"]).result}
+
+	#If it was not successful, return an empty dictionary (and print data).
+	print("_update_player: Error: Did not get OK from the server.")
+	print(response["data"])
+	return {"success" : false, "msg": response["data"]}
+	
+	
+#A method for getting all the player information.
+func _get_player():
+	#Get the player information from the server.
+	var response = _get(_ADDR_PLAYER)
+	
+	#If the token experied, update token and try again.
+	if(response["code"] == 401):
+		_update_tokens()
+		response = _get(_ADDR_PLAYER)
+		
+	#If it was successful, parse the data and return the dictionary.
+	if(response["code"] == 200):
+		return {"success" : true, "dict": JSON.parse(response["data"]).result}
+
+	#If it was not successful, return an empty dictionary (and print data).
+	print("_get_player: Error: Did not get OK from the server.")
+	print(response["data"])
+	return {"success" : false, "dict": {}}
 
 
 # A method which requests new tokens from the server, and updates the class variables.
 func _update_tokens():
 	#Get the new tokens from the server by providing username and password.
-	var response = _post("/api/token/", {"username" : _user, "password" : _pass})
+	var response = _post(_ADDR_TOKEN, {"username" : _user, "password" : _pass})
 
 	#If tokens were successfully returned, update the class variables.
 	if(response["code"] == 200):
@@ -90,6 +134,7 @@ func _update_tokens():
 		return {"success" : false, "msg": JSON.parse(response["data"]).result["detail"]}
 		
 	#If we get here, there was an unknwon error in updating the tokens.
+	print("_update_tokens: Error: Did not get OK from the server.")
 	print(response["data"])
 	return {"success" : false, "msg": "Error in request."}
 
@@ -100,11 +145,14 @@ func _post(url, data):
 	var query = JSON.print(data)
 	return _req(_http.METHOD_POST, url, query)
 
-
 # A wrapper function for the req method to provide a HTTP GET request.
 func _get(url):
 	return _req(_http.METHOD_GET, url, "")
-
+	
+# A wrapper functin which provides PATCH HTTP requests.
+func _patch(url, data):
+	var query = JSON.print(data)
+	return _req(_http.METHOD_PATCH, url, query)
 
 # A method which makes post requests to the server, and sends JSON over, it then returns
 # The response code along with the sent back data.
