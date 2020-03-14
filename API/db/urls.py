@@ -5,12 +5,10 @@ from .views import *
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('user_create', CreateUserAPI.as_view(), name="createUser"),
-    path('userInfo', GetUserProfile.as_view(), name="getUser"),
 
-    path('character', GetCharacter.as_view(), name="getCharacter"),
-    path('monster', GetMonster.as_view(), name="getMonster"),
-    path('item', GetMonster.as_view(), name="getMonster"),
-    path('change_password', ChangePasswordAPI.as_view(), name="changePassword"),
-    path('sign_in', SignInAPI.as_view(), name="signIn")
+    # APIs requiring token
+    path('player/create', CreateUserAPI.as_view(), name="createPlayer"),
+    path('player', GetPlayer.as_view(), name="getPlayer"),
+    path('player/<user__username>/change', ChangePlayer.as_view(), name="changePlayer"),
+    path('player/change_password', ChangePasswordAPI.as_view(), name="changePassword"),
 ]
