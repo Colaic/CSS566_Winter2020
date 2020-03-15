@@ -273,7 +273,7 @@ __meta__ = {
 }
 
 [node name="AvatarIcon" type="Sprite" parent="Avatar"]
-position = Vector2( 80.4306, 75.7802 )
+position = Vector2( 80.4306, 74.7802 )
 scale = Vector2( 0.309472, 0.292145 )
 texture = ExtResource( 2 )
 [connection signal="pressed" from="BackButtonUserProfile" to="BackButtonUserProfile" method="_on_BackButtonUserProfile_pressed"]
