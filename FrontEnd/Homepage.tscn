@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Image/Homepage.jpg" type="Texture" id=1]
 [ext_resource path="res://Image/characters.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Image/horizontal_bar.png" type="Texture" id=13]
 [ext_resource path="res://HPProgressBar.gd" type="Script" id=14]
 [ext_resource path="res://FromHomeToStore.gd" type="Script" id=15]
+[ext_resource path="res://buttonLibrary.gd" type="Script" id=16]
 
 [node name="Homepage" type="Node"]
 
@@ -140,12 +141,13 @@ margin_left = 961.069
 margin_top = 311.218
 margin_right = 1061.07
 margin_bottom = 411.218
+script = ExtResource( 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="libraryIcon" type="Sprite" parent="HomePage/buttonLibrary"]
-position = Vector2( 50.1072, 50.6188 )
+position = Vector2( 50.1074, 49.7614 )
 scale = Vector2( 0.174288, 0.150689 )
 texture = ExtResource( 7 )
 
@@ -221,4 +223,5 @@ __meta__ = {
 }
 [connection signal="pressed" from="HomePage/PlayerProfielButton" to="HomePage/PlayerProfielButton" method="_on_PlayerProfielButton_pressed"]
 [connection signal="pressed" from="HomePage/buttonStore" to="HomePage/PlayerProfielButton" method="_on_buttonStore_pressed"]
+[connection signal="button_down" from="HomePage/buttonLibrary" to="HomePage/buttonLibrary" method="_on_buttonLibrary_button_down"]
 [connection signal="pressed" from="HomePage/ExitHomepageButton" to="HomePage/ExitHomepageButton" method="_on_ExitHomepageButton_pressed"]
