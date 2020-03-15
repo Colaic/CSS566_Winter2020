@@ -1,15 +1,12 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://BackButtonUserProfile.gd" type="Script" id=1]
+[ext_resource path="res://Image/Avatars/PNG/1.png" type="Texture" id=2]
 [ext_resource path="res://Image/Homepage.jpg" type="Texture" id=6]
 
 [node name="UserProfile" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -27,7 +24,7 @@ __meta__ = {
 }
 
 [node name="UserProfileBackground" type="Sprite" parent="ColorRect"]
-position = Vector2( 641.194, 360.509 )
+position = Vector2( 642.194, 349.509 )
 scale = Vector2( 0.213695, 0.180661 )
 texture = ExtResource( 6 )
 
@@ -43,20 +40,620 @@ __meta__ = {
 }
 
 [node name="BackgroundPanel" type="ColorRect" parent="."]
-margin_left = 69.0
-margin_top = 98.0
-margin_right = 1213.0
-margin_bottom = 683.0
+margin_left = 61.0
+margin_top = 92.0
+margin_right = 1205.0
+margin_bottom = 677.0
 color = Color( 0.137255, 0.0666667, 0.2, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-margin_left = 316.0
-margin_top = 29.0
-margin_right = 702.0
-margin_bottom = 88.0
+[node name="CharacterPanel" type="Panel" parent="BackgroundPanel"]
+margin_left = 61.0
+margin_top = 67.0
+margin_right = 155.0
+margin_bottom = 262.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel"]
+position = Vector2( 48, 41 )
+scale = Vector2( 0.175781, 0.167969 )
+texture = ExtResource( 2 )
+
+[node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel"]
+margin_left = 4.0
+margin_top = 87.0
+margin_right = 94.0
+margin_bottom = 191.0
+text = "Knight 1
+HP:
+MP:
+Atk:
+Def:
+Spd:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterPanel2" type="Panel" parent="BackgroundPanel"]
+margin_left = 165.0
+margin_top = 67.0
+margin_right = 259.0
+margin_bottom = 262.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel2"]
+position = Vector2( 48, 41 )
+scale = Vector2( 0.175781, 0.167969 )
+texture = ExtResource( 2 )
+
+[node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel2"]
+margin_left = 4.0
+margin_top = 87.0
+margin_right = 94.0
+margin_bottom = 191.0
+text = "Knight 1
+HP:
+MP:
+Atk:
+Def:
+Spd:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterPanel3" type="Panel" parent="BackgroundPanel"]
+margin_left = 269.0
+margin_top = 67.0
+margin_right = 363.0
+margin_bottom = 262.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel3"]
+position = Vector2( 48, 41 )
+scale = Vector2( 0.175781, 0.167969 )
+texture = ExtResource( 2 )
+
+[node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel3"]
+margin_left = 4.0
+margin_top = 87.0
+margin_right = 94.0
+margin_bottom = 191.0
+text = "Knight 1
+HP:
+MP:
+Atk:
+Def:
+Spd:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterPanel4" type="Panel" parent="BackgroundPanel"]
+margin_left = 373.0
+margin_top = 67.0
+margin_right = 467.0
+margin_bottom = 262.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel4"]
+position = Vector2( 48, 41 )
+scale = Vector2( 0.175781, 0.167969 )
+texture = ExtResource( 2 )
+
+[node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel4"]
+margin_left = 4.0
+margin_top = 87.0
+margin_right = 94.0
+margin_bottom = 191.0
+text = "Knight 1
+HP:
+MP:
+Atk:
+Def:
+Spd:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterPanel5" type="Panel" parent="BackgroundPanel"]
+margin_left = 477.0
+margin_top = 67.0
+margin_right = 571.0
+margin_bottom = 262.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel5"]
+position = Vector2( 48, 41 )
+scale = Vector2( 0.175781, 0.167969 )
+texture = ExtResource( 2 )
+
+[node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel5"]
+margin_left = 4.0
+margin_top = 87.0
+margin_right = 94.0
+margin_bottom = 191.0
+text = "Knight 1
+HP:
+MP:
+Atk:
+Def:
+Spd:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterPanel6" type="Panel" parent="BackgroundPanel"]
+margin_left = 581.0
+margin_top = 67.0
+margin_right = 675.0
+margin_bottom = 262.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel6"]
+position = Vector2( 48, 41 )
+scale = Vector2( 0.175781, 0.167969 )
+texture = ExtResource( 2 )
+
+[node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel6"]
+margin_left = 4.0
+margin_top = 87.0
+margin_right = 94.0
+margin_bottom = 191.0
+text = "Knight 1
+HP:
+MP:
+Atk:
+Def:
+Spd:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterPanel7" type="Panel" parent="BackgroundPanel"]
+margin_left = 685.0
+margin_top = 67.0
+margin_right = 779.0
+margin_bottom = 262.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel7"]
+position = Vector2( 48, 41 )
+scale = Vector2( 0.175781, 0.167969 )
+texture = ExtResource( 2 )
+
+[node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel7"]
+margin_left = 4.0
+margin_top = 87.0
+margin_right = 94.0
+margin_bottom = 191.0
+text = "Knight 1
+HP:
+MP:
+Atk:
+Def:
+Spd:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterPanel8" type="Panel" parent="BackgroundPanel"]
+margin_left = 789.0
+margin_top = 67.0
+margin_right = 883.0
+margin_bottom = 262.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel8"]
+position = Vector2( 48, 41 )
+scale = Vector2( 0.175781, 0.167969 )
+texture = ExtResource( 2 )
+
+[node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel8"]
+margin_left = 4.0
+margin_top = 87.0
+margin_right = 94.0
+margin_bottom = 191.0
+text = "Knight 1
+HP:
+MP:
+Atk:
+Def:
+Spd:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterPanel9" type="Panel" parent="BackgroundPanel"]
+margin_left = 893.0
+margin_top = 67.0
+margin_right = 987.0
+margin_bottom = 262.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel9"]
+position = Vector2( 48, 41 )
+scale = Vector2( 0.175781, 0.167969 )
+texture = ExtResource( 2 )
+
+[node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel9"]
+margin_left = 4.0
+margin_top = 87.0
+margin_right = 94.0
+margin_bottom = 191.0
+text = "Knight 1
+HP:
+MP:
+Atk:
+Def:
+Spd:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterPanel10" type="Panel" parent="BackgroundPanel"]
+margin_left = 996.0
+margin_top = 67.0
+margin_right = 1090.0
+margin_bottom = 262.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel10"]
+position = Vector2( 48, 41 )
+scale = Vector2( 0.175781, 0.167969 )
+texture = ExtResource( 2 )
+
+[node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel10"]
+margin_left = 4.0
+margin_top = 87.0
+margin_right = 94.0
+margin_bottom = 191.0
+text = "Knight 1
+HP:
+MP:
+Atk:
+Def:
+Spd:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterPanel20" type="Panel" parent="BackgroundPanel"]
+margin_left = 61.0
+margin_top = 299.0
+margin_right = 155.0
+margin_bottom = 494.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel20"]
+position = Vector2( 48, 41 )
+scale = Vector2( 0.175781, 0.167969 )
+texture = ExtResource( 2 )
+
+[node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel20"]
+margin_left = 4.0
+margin_top = 87.0
+margin_right = 94.0
+margin_bottom = 191.0
+text = "Knight 1
+HP:
+MP:
+Atk:
+Def:
+Spd:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterPanel19" type="Panel" parent="BackgroundPanel"]
+margin_left = 165.0
+margin_top = 299.0
+margin_right = 259.0
+margin_bottom = 494.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel19"]
+position = Vector2( 48, 41 )
+scale = Vector2( 0.175781, 0.167969 )
+texture = ExtResource( 2 )
+
+[node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel19"]
+margin_left = 4.0
+margin_top = 87.0
+margin_right = 94.0
+margin_bottom = 191.0
+text = "Knight 1
+HP:
+MP:
+Atk:
+Def:
+Spd:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterPanel18" type="Panel" parent="BackgroundPanel"]
+margin_left = 269.0
+margin_top = 299.0
+margin_right = 363.0
+margin_bottom = 494.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel18"]
+position = Vector2( 48, 41 )
+scale = Vector2( 0.175781, 0.167969 )
+texture = ExtResource( 2 )
+
+[node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel18"]
+margin_left = 4.0
+margin_top = 87.0
+margin_right = 94.0
+margin_bottom = 191.0
+text = "Knight 1
+HP:
+MP:
+Atk:
+Def:
+Spd:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterPanel17" type="Panel" parent="BackgroundPanel"]
+margin_left = 373.0
+margin_top = 299.0
+margin_right = 467.0
+margin_bottom = 494.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel17"]
+position = Vector2( 48, 41 )
+scale = Vector2( 0.175781, 0.167969 )
+texture = ExtResource( 2 )
+
+[node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel17"]
+margin_left = 4.0
+margin_top = 87.0
+margin_right = 94.0
+margin_bottom = 191.0
+text = "Knight 1
+HP:
+MP:
+Atk:
+Def:
+Spd:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterPanel16" type="Panel" parent="BackgroundPanel"]
+margin_left = 477.0
+margin_top = 299.0
+margin_right = 571.0
+margin_bottom = 494.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel16"]
+position = Vector2( 48, 41 )
+scale = Vector2( 0.175781, 0.167969 )
+texture = ExtResource( 2 )
+
+[node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel16"]
+margin_left = 4.0
+margin_top = 87.0
+margin_right = 94.0
+margin_bottom = 191.0
+text = "Knight 1
+HP:
+MP:
+Atk:
+Def:
+Spd:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterPanel15" type="Panel" parent="BackgroundPanel"]
+margin_left = 581.0
+margin_top = 299.0
+margin_right = 675.0
+margin_bottom = 494.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel15"]
+position = Vector2( 48, 41 )
+scale = Vector2( 0.175781, 0.167969 )
+texture = ExtResource( 2 )
+
+[node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel15"]
+margin_left = 4.0
+margin_top = 87.0
+margin_right = 94.0
+margin_bottom = 191.0
+text = "Knight 1
+HP:
+MP:
+Atk:
+Def:
+Spd:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterPanel14" type="Panel" parent="BackgroundPanel"]
+margin_left = 685.0
+margin_top = 299.0
+margin_right = 779.0
+margin_bottom = 494.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel14"]
+position = Vector2( 48, 41 )
+scale = Vector2( 0.175781, 0.167969 )
+texture = ExtResource( 2 )
+
+[node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel14"]
+margin_left = 4.0
+margin_top = 87.0
+margin_right = 94.0
+margin_bottom = 191.0
+text = "Knight 1
+HP:
+MP:
+Atk:
+Def:
+Spd:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterPanel13" type="Panel" parent="BackgroundPanel"]
+margin_left = 789.0
+margin_top = 299.0
+margin_right = 883.0
+margin_bottom = 494.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel13"]
+position = Vector2( 48, 41 )
+scale = Vector2( 0.175781, 0.167969 )
+texture = ExtResource( 2 )
+
+[node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel13"]
+margin_left = 4.0
+margin_top = 87.0
+margin_right = 94.0
+margin_bottom = 191.0
+text = "Knight 1
+HP:
+MP:
+Atk:
+Def:
+Spd:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterPanel12" type="Panel" parent="BackgroundPanel"]
+margin_left = 893.0
+margin_top = 299.0
+margin_right = 987.0
+margin_bottom = 494.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel12"]
+position = Vector2( 48, 41 )
+scale = Vector2( 0.175781, 0.167969 )
+texture = ExtResource( 2 )
+
+[node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel12"]
+margin_left = 4.0
+margin_top = 87.0
+margin_right = 94.0
+margin_bottom = 191.0
+text = "Knight 1
+HP:
+MP:
+Atk:
+Def:
+Spd:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterPanel11" type="Panel" parent="BackgroundPanel"]
+margin_left = 996.0
+margin_top = 299.0
+margin_right = 1090.0
+margin_bottom = 494.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel11"]
+position = Vector2( 48, 41 )
+scale = Vector2( 0.175781, 0.167969 )
+texture = ExtResource( 2 )
+
+[node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel11"]
+margin_left = 4.0
+margin_top = 87.0
+margin_right = 94.0
+margin_bottom = 191.0
+text = "Knight 1
+HP:
+MP:
+Atk:
+Def:
+Spd:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 576.0
+margin_top = 76.0
+margin_right = 692.0
+margin_bottom = 93.0
 text = "Character Library"
 __meta__ = {
 "_edit_use_anchors_": false
