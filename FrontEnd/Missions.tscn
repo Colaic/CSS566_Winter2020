@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Image/parchment.png" type="Texture" id=1]
 [ext_resource path="res://Image/Text/cooltext351981682860128.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Image/Text/Cool Text - Mission 3 351981043862045.png" type="Texture" id=10]
 [ext_resource path="res://Image/Text/cooltext351981144114865.png" type="Texture" id=11]
 [ext_resource path="res://Image/Text/cooltext351981329986968.png" type="Texture" id=12]
+[ext_resource path="res://Button.gd" type="Script" id=13]
 
 [node name="Missions" type="Control"]
 anchor_right = 1.0
@@ -299,9 +300,26 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 364.0
+margin_left = 363.0
 margin_top = 281.0
-margin_right = 953.0
+margin_right = 952.0
 margin_bottom = 444.0
 texture = ExtResource( 2 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="TextureRect"]
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0.858824, 0.858824, 0.858824, 1 )
+show_behind_parent = true
+margin_left = -10.0
+margin_top = -7.0
+margin_right = 581.0
+margin_bottom = 161.0
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="TextureRect/Button" to="TextureRect/Button" method="_on_Button_button_down"]
