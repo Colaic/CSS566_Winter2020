@@ -1,8 +1,30 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://BackButtonUserProfile.gd" type="Script" id=1]
-[ext_resource path="res://Image/Avatars/PNG/1.png" type="Texture" id=2]
+[ext_resource path="res://Image/Avatars/PNG/6.png" type="Texture" id=2]
+[ext_resource path="res://Image/Avatars/PNG/5.png" type="Texture" id=3]
+[ext_resource path="res://Image/Characters/PNG/4.png" type="Texture" id=4]
+[ext_resource path="res://Image/Avatars/PNG/10.png" type="Texture" id=5]
 [ext_resource path="res://Image/Homepage.jpg" type="Texture" id=6]
+[ext_resource path="res://Image/Avatars/PNG/3.png" type="Texture" id=7]
+[ext_resource path="res://Image/Characters/PNG/15.png" type="Texture" id=8]
+[ext_resource path="res://Image/Avatars/PNG/4.png" type="Texture" id=9]
+[ext_resource path="res://Image/Characters/PNG/7.png" type="Texture" id=10]
+[ext_resource path="res://Image/Avatars/PNG/9.png" type="Texture" id=11]
+[ext_resource path="res://Image/Avatars/PNG/7.png" type="Texture" id=12]
+[ext_resource path="res://Image/Avatars/PNG/8.png" type="Texture" id=13]
+[ext_resource path="res://Image/Avatars/PNG/14.png" type="Texture" id=14]
+[ext_resource path="res://Image/Avatars/PNG/17.png" type="Texture" id=15]
+[ext_resource path="res://Image/Avatars/PNG/16.png" type="Texture" id=16]
+[ext_resource path="res://Image/Avatars/PNG/15.png" type="Texture" id=17]
+[ext_resource path="res://Image/Avatars/PNG/11.png" type="Texture" id=18]
+[ext_resource path="res://Image/Avatars/PNG/13.png" type="Texture" id=19]
+[ext_resource path="res://Image/Avatars/PNG/2.png" type="Texture" id=20]
+[ext_resource path="res://Image/Avatars/PNG/12.png" type="Texture" id=21]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/1.png-3d9ceb27eca5503a7f4b5ef1faeb3ffe.stex"
 
 [node name="UserProfile" type="Control"]
 anchor_right = 1.0
@@ -24,7 +46,7 @@ __meta__ = {
 }
 
 [node name="UserProfileBackground" type="Sprite" parent="ColorRect"]
-position = Vector2( 642.194, 349.509 )
+position = Vector2( 640.194, 360.456 )
 scale = Vector2( 0.213695, 0.180661 )
 texture = ExtResource( 6 )
 
@@ -61,19 +83,19 @@ __meta__ = {
 [node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel"]
 position = Vector2( 48, 41 )
 scale = Vector2( 0.175781, 0.167969 )
-texture = ExtResource( 2 )
+texture = SubResource( 1 )
 
 [node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel"]
 margin_left = 4.0
-margin_top = 87.0
+margin_top = 86.0975
 margin_right = 94.0
-margin_bottom = 191.0
-text = "Knight 1
-HP:
-MP:
-Atk:
-Def:
-Spd:"
+margin_bottom = 190.097
+text = "Silver Knight
+HP: 5
+MP: 2
+Atk: 1
+Def: 4
+Spd: 1"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -88,26 +110,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel2"]
-position = Vector2( 48, 41 )
-scale = Vector2( 0.175781, 0.167969 )
-texture = ExtResource( 2 )
-
 [node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel2"]
 margin_left = 4.0
 margin_top = 87.0
 margin_right = 94.0
 margin_bottom = 191.0
-text = "Knight 1
-HP:
-MP:
-Atk:
-Def:
-Spd:"
+text = "Gold Knight
+HP: 5
+MP: 2
+Atk: 2
+Def: 3
+Spd: 1"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="BackgroundPanel/CharacterPanel2"]
+position = Vector2( 47, 41 )
+scale = Vector2( 0.175781, 0.164063 )
+texture = ExtResource( 20 )
 
 [node name="CharacterPanel3" type="Panel" parent="BackgroundPanel"]
 margin_left = 269.0
@@ -118,26 +140,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel3"]
-position = Vector2( 48, 41 )
-scale = Vector2( 0.175781, 0.167969 )
-texture = ExtResource( 2 )
-
 [node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel3"]
 margin_left = 4.0
 margin_top = 87.0
 margin_right = 94.0
 margin_bottom = 191.0
-text = "Knight 1
-HP:
-MP:
-Atk:
-Def:
-Spd:"
+text = "Warrior 1
+HP: 5
+MP: 0
+Atk: 3
+Def: 2
+Spd: 1"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="BackgroundPanel/CharacterPanel3"]
+position = Vector2( 47.5, 42.5 )
+scale = Vector2( 0.177734, 0.158203 )
+texture = ExtResource( 7 )
 
 [node name="CharacterPanel4" type="Panel" parent="BackgroundPanel"]
 margin_left = 373.0
@@ -148,26 +170,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel4"]
-position = Vector2( 48, 41 )
-scale = Vector2( 0.175781, 0.167969 )
-texture = ExtResource( 2 )
-
 [node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel4"]
 margin_left = 4.0
 margin_top = 87.0
 margin_right = 94.0
 margin_bottom = 191.0
-text = "Knight 1
-HP:
-MP:
-Atk:
-Def:
-Spd:"
+text = "Horse
+HP: 4
+MP: 2
+Atk: 1
+Def: 4
+Spd: 1"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="BackgroundPanel/CharacterPanel4"]
+position = Vector2( 48, 43 )
+scale = Vector2( 0.179688, 0.160156 )
+texture = ExtResource( 4 )
 
 [node name="CharacterPanel5" type="Panel" parent="BackgroundPanel"]
 margin_left = 477.0
@@ -178,26 +200,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel5"]
-position = Vector2( 48, 41 )
-scale = Vector2( 0.175781, 0.167969 )
-texture = ExtResource( 2 )
-
 [node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel5"]
 margin_left = 4.0
 margin_top = 87.0
 margin_right = 94.0
 margin_bottom = 191.0
-text = "Knight 1
-HP:
-MP:
-Atk:
-Def:
-Spd:"
+text = "Warrior 2
+HP: 5
+MP: 0
+Atk: 3
+Def: 2
+Spd: 1"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="BackgroundPanel/CharacterPanel5"]
+position = Vector2( 46, 42.5 )
+scale = Vector2( 0.179688, 0.158203 )
+texture = ExtResource( 9 )
 
 [node name="CharacterPanel6" type="Panel" parent="BackgroundPanel"]
 margin_left = 581.0
@@ -207,11 +229,6 @@ margin_bottom = 262.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel6"]
-position = Vector2( 48, 41 )
-scale = Vector2( 0.175781, 0.167969 )
-texture = ExtResource( 2 )
 
 [node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel6"]
 margin_left = 4.0
@@ -229,6 +246,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="BackgroundPanel/CharacterPanel6"]
+position = Vector2( 47, 42.5 )
+scale = Vector2( 0.175781, 0.158203 )
+texture = ExtResource( 10 )
+
 [node name="CharacterPanel7" type="Panel" parent="BackgroundPanel"]
 margin_left = 685.0
 margin_top = 67.0
@@ -237,11 +259,6 @@ margin_bottom = 262.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel7"]
-position = Vector2( 48, 41 )
-scale = Vector2( 0.175781, 0.167969 )
-texture = ExtResource( 2 )
 
 [node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel7"]
 margin_left = 4.0
@@ -259,6 +276,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="BackgroundPanel/CharacterPanel7"]
+position = Vector2( 46.5, 41 )
+scale = Vector2( 0.177734, 0.15625 )
+texture = ExtResource( 3 )
+
 [node name="CharacterPanel8" type="Panel" parent="BackgroundPanel"]
 margin_left = 789.0
 margin_top = 67.0
@@ -267,11 +289,6 @@ margin_bottom = 262.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel8"]
-position = Vector2( 48, 41 )
-scale = Vector2( 0.175781, 0.167969 )
-texture = ExtResource( 2 )
 
 [node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel8"]
 margin_left = 4.0
@@ -289,19 +306,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="BackgroundPanel/CharacterPanel8"]
+position = Vector2( 4, 110 )
+scale = Vector2( 0.181641, 0.154297 )
+texture = ExtResource( 2 )
+offset = Vector2( 239.484, -443.949 )
+
 [node name="CharacterPanel9" type="Panel" parent="BackgroundPanel"]
 margin_left = 893.0
-margin_top = 67.0
+margin_top = 66.0
 margin_right = 987.0
-margin_bottom = 262.0
+margin_bottom = 261.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel9"]
-position = Vector2( 48, 41 )
-scale = Vector2( 0.175781, 0.167969 )
-texture = ExtResource( 2 )
 
 [node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel9"]
 margin_left = 4.0
@@ -319,6 +337,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="BackgroundPanel/CharacterPanel9"]
+position = Vector2( 48.5, 43.5 )
+scale = Vector2( 0.181641, 0.158203 )
+texture = ExtResource( 12 )
+
 [node name="CharacterPanel10" type="Panel" parent="BackgroundPanel"]
 margin_left = 996.0
 margin_top = 67.0
@@ -327,11 +350,6 @@ margin_bottom = 262.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel10"]
-position = Vector2( 48, 41 )
-scale = Vector2( 0.175781, 0.167969 )
-texture = ExtResource( 2 )
 
 [node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel10"]
 margin_left = 4.0
@@ -349,6 +367,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="BackgroundPanel/CharacterPanel10"]
+position = Vector2( 45.5, 42.5 )
+scale = Vector2( 0.181641, 0.154297 )
+texture = ExtResource( 13 )
+
 [node name="CharacterPanel20" type="Panel" parent="BackgroundPanel"]
 margin_left = 61.0
 margin_top = 299.0
@@ -357,11 +380,6 @@ margin_bottom = 494.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel20"]
-position = Vector2( 48, 41 )
-scale = Vector2( 0.175781, 0.167969 )
-texture = ExtResource( 2 )
 
 [node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel20"]
 margin_left = 4.0
@@ -379,6 +397,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="BackgroundPanel/CharacterPanel20"]
+position = Vector2( 48.2631, 42.7106 )
+scale = Vector2( 0.176603, 0.151007 )
+texture = ExtResource( 11 )
+
 [node name="CharacterPanel19" type="Panel" parent="BackgroundPanel"]
 margin_left = 165.0
 margin_top = 299.0
@@ -387,11 +410,6 @@ margin_bottom = 494.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel19"]
-position = Vector2( 48, 41 )
-scale = Vector2( 0.175781, 0.167969 )
-texture = ExtResource( 2 )
 
 [node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel19"]
 margin_left = 4.0
@@ -409,6 +427,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="BackgroundPanel/CharacterPanel19"]
+position = Vector2( 47.8947, 42.1053 )
+scale = Vector2( 0.183799, 0.157072 )
+texture = ExtResource( 5 )
+
 [node name="CharacterPanel18" type="Panel" parent="BackgroundPanel"]
 margin_left = 269.0
 margin_top = 299.0
@@ -417,11 +440,6 @@ margin_bottom = 494.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel18"]
-position = Vector2( 48, 41 )
-scale = Vector2( 0.175781, 0.167969 )
-texture = ExtResource( 2 )
 
 [node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel18"]
 margin_left = 4.0
@@ -439,6 +457,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="BackgroundPanel/CharacterPanel18"]
+position = Vector2( 47.8947, 40.5263 )
+scale = Vector2( 0.179688, 0.16324 )
+texture = ExtResource( 18 )
+
 [node name="CharacterPanel17" type="Panel" parent="BackgroundPanel"]
 margin_left = 373.0
 margin_top = 299.0
@@ -447,11 +470,6 @@ margin_bottom = 494.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel17"]
-position = Vector2( 48, 41 )
-scale = Vector2( 0.175781, 0.167969 )
-texture = ExtResource( 2 )
 
 [node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel17"]
 margin_left = 4.0
@@ -469,6 +487,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="BackgroundPanel/CharacterPanel17"]
+position = Vector2( 48.4211, 41.0526 )
+scale = Vector2( 0.177631, 0.157072 )
+texture = ExtResource( 21 )
+
 [node name="CharacterPanel16" type="Panel" parent="BackgroundPanel"]
 margin_left = 477.0
 margin_top = 299.0
@@ -477,11 +500,6 @@ margin_bottom = 494.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel16"]
-position = Vector2( 48, 41 )
-scale = Vector2( 0.175781, 0.167969 )
-texture = ExtResource( 2 )
 
 [node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel16"]
 margin_left = 4.0
@@ -499,6 +517,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="BackgroundPanel/CharacterPanel16"]
+position = Vector2( 47.3685, 41.0526 )
+scale = Vector2( 0.177632, 0.157072 )
+texture = ExtResource( 19 )
+
 [node name="CharacterPanel15" type="Panel" parent="BackgroundPanel"]
 margin_left = 581.0
 margin_top = 299.0
@@ -508,26 +531,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel15"]
-position = Vector2( 48, 41 )
-scale = Vector2( 0.175781, 0.167969 )
-texture = ExtResource( 2 )
-
 [node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel15"]
-margin_left = 4.0
-margin_top = 87.0
-margin_right = 94.0
-margin_bottom = 191.0
-text = "Knight 1
-HP:
-MP:
-Atk:
-Def:
-Spd:"
+margin_left = 3.0
+margin_top = 86.0975
+margin_right = 93.0
+margin_bottom = 190.098
+text = "Blue Wizard
+HP: 3
+MP: 4
+Atk: 4
+Def: 1
+Spd: 1"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="BackgroundPanel/CharacterPanel15"]
+position = Vector2( 47.8948, 42.6316 )
+scale = Vector2( 0.179688, 0.155016 )
+texture = ExtResource( 14 )
 
 [node name="CharacterPanel14" type="Panel" parent="BackgroundPanel"]
 margin_left = 685.0
@@ -537,11 +560,6 @@ margin_bottom = 494.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel14"]
-position = Vector2( 48, 41 )
-scale = Vector2( 0.175781, 0.167969 )
-texture = ExtResource( 2 )
 
 [node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel14"]
 margin_left = 4.0
@@ -559,6 +577,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="BackgroundPanel/CharacterPanel14"]
+position = Vector2( 48.4211, 42.6316 )
+scale = Vector2( 0.177632, 0.159128 )
+texture = ExtResource( 17 )
+
 [node name="CharacterPanel13" type="Panel" parent="BackgroundPanel"]
 margin_left = 789.0
 margin_top = 299.0
@@ -567,11 +590,6 @@ margin_bottom = 494.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel13"]
-position = Vector2( 48, 41 )
-scale = Vector2( 0.175781, 0.167969 )
-texture = ExtResource( 2 )
 
 [node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel13"]
 margin_left = 4.0
@@ -589,6 +607,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="BackgroundPanel/CharacterPanel13"]
+position = Vector2( 47.8948, 42.6315 )
+scale = Vector2( 0.175576, 0.16324 )
+texture = ExtResource( 16 )
+
 [node name="CharacterPanel12" type="Panel" parent="BackgroundPanel"]
 margin_left = 893.0
 margin_top = 299.0
@@ -597,11 +620,6 @@ margin_bottom = 494.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel12"]
-position = Vector2( 48, 41 )
-scale = Vector2( 0.175781, 0.167969 )
-texture = ExtResource( 2 )
 
 [node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel12"]
 margin_left = 4.0
@@ -619,6 +637,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="BackgroundPanel/CharacterPanel12"]
+position = Vector2( 48.4211, 42.1053 )
+scale = Vector2( 0.177632, 0.161184 )
+texture = ExtResource( 15 )
+
 [node name="CharacterPanel11" type="Panel" parent="BackgroundPanel"]
 margin_left = 996.0
 margin_top = 299.0
@@ -627,11 +650,6 @@ margin_bottom = 494.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="CharacterSprite" type="Sprite" parent="BackgroundPanel/CharacterPanel11"]
-position = Vector2( 48, 41 )
-scale = Vector2( 0.175781, 0.167969 )
-texture = ExtResource( 2 )
 
 [node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel11"]
 margin_left = 4.0
@@ -649,11 +667,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="BackgroundPanel/CharacterPanel11"]
+position = Vector2( 45.2631, 42.6316 )
+scale = Vector2( 0.17352, 0.150905 )
+texture = ExtResource( 8 )
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = 576.0
-margin_top = 76.0
+margin_top = 75.0
 margin_right = 692.0
-margin_bottom = 93.0
+margin_bottom = 92.0
 text = "Character Library"
 __meta__ = {
 "_edit_use_anchors_": false
