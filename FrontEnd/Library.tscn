@@ -145,7 +145,7 @@ margin_left = 4.0
 margin_top = 87.0
 margin_right = 94.0
 margin_bottom = 191.0
-text = "Warrior 1
+text = "Warrior
 HP: 5
 MP: 0
 Atk: 3
@@ -205,7 +205,7 @@ margin_left = 4.0
 margin_top = 87.0
 margin_right = 94.0
 margin_bottom = 191.0
-text = "Warrior 2
+text = "Yeoman
 HP: 5
 MP: 0
 Atk: 3
@@ -235,12 +235,12 @@ margin_left = 4.0
 margin_top = 87.0
 margin_right = 94.0
 margin_bottom = 191.0
-text = "Knight 1
-HP:
-MP:
-Atk:
-Def:
-Spd:"
+text = "Master Cow
+HP: 4
+MP: 3
+Atk: 5
+Def: 1
+Spd: 1"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -265,12 +265,12 @@ margin_left = 4.0
 margin_top = 87.0
 margin_right = 94.0
 margin_bottom = 191.0
-text = "Knight 1
-HP:
-MP:
-Atk:
-Def:
-Spd:"
+text = "Red Knight
+HP: 5
+MP: 1
+Atk: 3
+Def: 2
+Spd: 1"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -295,12 +295,12 @@ margin_left = 4.0
 margin_top = 87.0
 margin_right = 94.0
 margin_bottom = 191.0
-text = "Knight 1
-HP:
-MP:
-Atk:
-Def:
-Spd:"
+text = "Orange Knight
+HP: 5
+MP: 1
+Atk: 2
+Def: 3
+Spd: 1"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -326,12 +326,12 @@ margin_left = 4.0
 margin_top = 87.0
 margin_right = 94.0
 margin_bottom = 191.0
-text = "Knight 1
-HP:
-MP:
-Atk:
-Def:
-Spd:"
+text = "Magician
+HP: 3
+MP: 3
+Atk: 4
+Def: 2
+Spd: 1"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -356,12 +356,12 @@ margin_left = 4.0
 margin_top = 87.0
 margin_right = 94.0
 margin_bottom = 191.0
-text = "Knight 1
-HP:
-MP:
-Atk:
-Def:
-Spd:"
+text = "Blue Warrior
+HP: 2
+MP: 1
+Atk: 1
+Def: 2
+Spd: 1"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -386,12 +386,12 @@ margin_left = 4.0
 margin_top = 87.0
 margin_right = 94.0
 margin_bottom = 191.0
-text = "Knight 1
-HP:
-MP:
-Atk:
-Def:
-Spd:"
+text = "Dwarf Warrior
+HP: 5
+MP: 2
+Atk: 0
+Def: 5
+Spd: 1"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -416,12 +416,12 @@ margin_left = 4.0
 margin_top = 87.0
 margin_right = 94.0
 margin_bottom = 191.0
-text = "Knight 1
-HP:
-MP:
-Atk:
-Def:
-Spd:"
+text = "Elf Warrior
+HP: 5
+MP: 2
+Atk: 2
+Def: 5
+Spd: 1"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -446,12 +446,12 @@ margin_left = 4.0
 margin_top = 87.0
 margin_right = 94.0
 margin_bottom = 191.0
-text = "Knight 1
-HP:
-MP:
-Atk:
-Def:
-Spd:"
+text = "Elf Captain
+HP: 6
+MP: 2
+Atk: 2
+Def: 5
+Spd: 2"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -476,12 +476,12 @@ margin_left = 4.0
 margin_top = 87.0
 margin_right = 94.0
 margin_bottom = 191.0
-text = "Knight 1
-HP:
-MP:
-Atk:
-Def:
-Spd:"
+text = "Assassin
+HP: 4
+MP: 1
+Atk: 4
+Def: 1
+Spd: 1"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -506,12 +506,12 @@ margin_left = 4.0
 margin_top = 87.0
 margin_right = 94.0
 margin_bottom = 191.0
-text = "Knight 1
-HP:
-MP:
-Atk:
-Def:
-Spd:"
+text = "King
+HP: 5
+MP: 2
+Atk: 1
+Def: 5
+Spd: 1"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -564,14 +564,14 @@ __meta__ = {
 [node name="CharacterStats" type="Label" parent="BackgroundPanel/CharacterPanel14"]
 margin_left = 4.0
 margin_top = 87.0
-margin_right = 94.0
+margin_right = 95.0
 margin_bottom = 191.0
-text = "Knight 1
-HP:
-MP:
-Atk:
-Def:
-Spd:"
+text = "Peasant
+HP: 1
+MP: 1
+Atk: 1
+Def: 0
+Spd: 0"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -596,12 +596,12 @@ margin_left = 4.0
 margin_top = 87.0
 margin_right = 94.0
 margin_bottom = 191.0
-text = "Knight 1
-HP:
-MP:
-Atk:
-Def:
-Spd:"
+text = "Archer
+HP: 4
+MP: 1
+Atk: 3
+Def: 3
+Spd: 1"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -626,19 +626,19 @@ margin_left = 4.0
 margin_top = 87.0
 margin_right = 94.0
 margin_bottom = 191.0
-text = "Knight 1
-HP:
-MP:
-Atk:
-Def:
-Spd:"
+text = "Druid
+HP: 3
+MP: 3
+Atk: 1
+Def: 5
+Spd: 1"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Sprite" type="Sprite" parent="BackgroundPanel/CharacterPanel12"]
-position = Vector2( 48.4211, 42.1053 )
+position = Vector2( 48.4209, 41.2029 )
 scale = Vector2( 0.177632, 0.161184 )
 texture = ExtResource( 15 )
 
@@ -656,12 +656,12 @@ margin_left = 4.0
 margin_top = 87.0
 margin_right = 94.0
 margin_bottom = 191.0
-text = "Knight 1
-HP:
-MP:
-Atk:
-Def:
-Spd:"
+text = "CASTLE
+HP: 10
+MP: 10
+Atk: 10
+Def: 10
+Spd: 10"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
