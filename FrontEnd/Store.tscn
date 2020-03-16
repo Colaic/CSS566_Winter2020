@@ -1,6 +1,13 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=31 format=2]
 
+[ext_resource path="res://Fonts/OpenSans-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://StoreBack.gd" type="Script" id=2]
+[ext_resource path="res://Image/Coins/Coin.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/OpenSans-Semibold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://index.png" type="Texture" id=5]
+[ext_resource path="res://StorePurchase.gd" type="Script" id=6]
+[ext_resource path="res://icon.png" type="Texture" id=7]
+[ext_resource path="res://Fonts/OpenSans-ExtraBold.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -89,10 +96,32 @@ load_path = "res://.import/red poison.png-0fe4e2841d75730853cb60ace5e2e6a3.stex"
 flags = 4
 load_path = "res://.import/snake.png-fbeaf83cbfcefd8c66b1c83a355981a3.stex"
 
-[node name="UserProfile" type="Control"]
+[sub_resource type="DynamicFontData" id=18]
+font_path = "res://Fonts/OpenSans-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=19]
+size = 20
+use_filter = true
+font_data = SubResource( 18 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 24
+outline_color = Color( 0.286275, 0.278431, 0.278431, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 43
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 27
+font_data = ExtResource( 4 )
+
+[node name="Store" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_scale = Vector2( 0.916335, 0.849462 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -102,10 +131,10 @@ anchor_left = -0.049
 anchor_top = 0.00123316
 anchor_right = 1.0
 anchor_bottom = 1.075
-margin_left = -127.28
-margin_top = -0.887875
-margin_right = 346.0
-margin_bottom = 91.9999
+margin_left = -99.8687
+margin_top = -13.2922
+margin_right = 373.411
+margin_bottom = 79.5956
 mouse_filter = 1
 color = Color( 0.2, 0.0784314, 0.239216, 1 )
 __meta__ = {
@@ -115,10 +144,10 @@ __meta__ = {
 [node name="StoreInfo" type="ColorRect" parent="."]
 anchor_left = 2.98023e-09
 anchor_right = 2.98023e-09
-margin_left = -7.56687
-margin_top = 107.886
-margin_right = 1145.43
-margin_bottom = 716.885
+margin_left = 26.0
+margin_top = 22.0
+margin_right = 1367.0
+margin_bottom = 813.0
 hint_tooltip = "Gold coin requires 500 currency"
 color = Color( 0.137255, 0.0666667, 0.2, 1 )
 __meta__ = {
@@ -126,20 +155,20 @@ __meta__ = {
 }
 
 [node name="EnergyListColor" type="ColorRect" parent="StoreInfo"]
-margin_left = 350.0
-margin_top = 318.0
-margin_right = 865.0
-margin_bottom = 568.0
+margin_left = 129.302
+margin_top = 451.857
+margin_right = 644.302
+margin_bottom = 701.857
 color = Color( 0.0509804, 0.00392157, 0.0588235, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="EnergyGrid" type="GridContainer" parent="StoreInfo/EnergyListColor"]
-margin_left = 6.79047
-margin_top = 7.47418
-margin_right = 456.79
-margin_bottom = 257.474
+margin_left = 14.4296
+margin_top = 12.183
+margin_right = 464.429
+margin_bottom = 262.183
 columns = 5
 __meta__ = {
 "_edit_use_anchors_": false
@@ -262,10 +291,10 @@ margin_bottom = 226.118
 text = "Key"
 
 [node name="HpAndMPList" type="ColorRect" parent="StoreInfo"]
-margin_left = 354.0
-margin_top = 48.0
-margin_right = 858.0
-margin_bottom = 297.0
+margin_left = 132.19
+margin_top = 170.993
+margin_right = 636.19
+margin_bottom = 419.993
 color = Color( 0.0509804, 0.00392157, 0.0588235, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -396,14 +425,156 @@ margin_bottom = 131.427
 text = "Against Curse"
 
 [node name="Button" type="Button" parent="."]
-margin_left = 46.1667
-margin_top = 146.29
-margin_right = 145.167
-margin_bottom = 183.29
+margin_left = 123.0
+margin_top = 59.0
+margin_right = 234.0
+margin_bottom = 106.0
 text = "Back"
 expand_icon = true
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CurrencyWidget" type="ColorRect" parent="."]
+margin_left = 581.478
+margin_top = 59.2278
+margin_right = 819.478
+margin_bottom = 102.228
+color = Color( 0.32549, 0.298039, 0.298039, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CurrencyWidget"]
+margin_left = 2.36517
+margin_top = -13.0
+margin_right = 105.365
+margin_bottom = 49.0
+size_flags_stretch_ratio = 0.0
+custom_fonts/font = SubResource( 19 )
+custom_colors/font_color = Color( 0.0784314, 0.980392, 0.705882, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.701961, 0.682353, 0.580392, 1 )
+text = "Currency :"
+align = 1
+valign = 1
+percent_visible = -0.125
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CurrencyWidget"]
+margin_left = 115.904
+margin_top = 2.0
+margin_right = 231.904
+margin_bottom = 39.0
+grow_horizontal = 0
+rect_pivot_offset = Vector2( 61.3135, 18.5 )
+custom_fonts/normal_font = SubResource( 20 )
+custom_colors/default_color = Color( 0.960784, 0.878431, 0, 1 )
+custom_colors/selection_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.0705882, 0.0627451, 0.0627451, 1 )
+text = "0"
+
+[node name="SummonPopup" type="Popup" parent="."]
+visible = true
+margin_left = 402.155
+margin_top = 139.419
+margin_right = 975.155
+margin_bottom = 735.419
+popup_exclusive = true
+
+[node name="SummonPanel" type="ColorRect" parent="SummonPopup"]
+margin_left = 24.6271
+margin_top = -37.2017
+margin_right = 520.627
+margin_bottom = 553.798
+color = Color( 0.0392157, 0.792157, 0.741176, 1 )
+
+[node name="Sprite" type="Sprite" parent="SummonPopup/SummonPanel"]
+position = Vector2( 243.189, 263.11 )
+scale = Vector2( 5.4803, 6.01713 )
+texture = ExtResource( 7 )
+
+[node name="CharacterName" type="Label" parent="SummonPopup/SummonPanel"]
+margin_left = 6.6882
+margin_top = 465.285
+margin_right = 477.688
+margin_bottom = 524.285
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 1, 0.964706, 0.141176, 1 )
+text = "Character"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterLevel" type="Label" parent="SummonPopup/SummonPanel"]
+margin_left = 168.463
+margin_top = 5.75182
+margin_right = 331.463
+margin_bottom = 64.7518
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 1, 0.960784, 0, 1 )
+text = "Level 5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseWindow" type="Button" parent="SummonPopup"]
+margin_left = 187.536
+margin_top = 490.263
+margin_right = 356.536
+margin_bottom = 544.263
+custom_fonts/font = SubResource( 22 )
+text = "Close"
+
+[node name="SummonButton" type="Button" parent="."]
+margin_left = 853.916
+margin_top = 201.396
+margin_right = 1181.92
+margin_bottom = 748.396
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SummonIcon" type="Sprite" parent="SummonButton"]
+position = Vector2( 161.584, 219.859 )
+scale = Vector2( 0.816357, 0.872197 )
+texture = ExtResource( 5 )
+
+[node name="SummonText" type="Label" parent="SummonButton"]
+margin_left = 59.748
+margin_top = 347.42
+margin_right = 271.748
+margin_bottom = 406.42
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 1, 0.988235, 0.298039, 1 )
+text = "SUMMON"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SummonCostText" type="Label" parent="SummonButton"]
+margin_left = 168.597
+margin_top = 438.946
+margin_right = 283.597
+margin_bottom = 497.946
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 1, 0.988235, 0.298039, 1 )
+text = "1000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coin" type="Sprite" parent="SummonButton"]
+position = Vector2( 86.957, 470.556 )
+scale = Vector2( 0.165889, 0.20801 )
+texture = ExtResource( 3 )
 [connection signal="pressed" from="Button" to="StoreInfo/HpAndMPList/HpGrid/Sprite" method="_on_Button_pressed"]
+[connection signal="ready" from="SummonPopup" to="." method="_on_SummonPanel_ready"]
+[connection signal="draw" from="SummonPopup/SummonPanel/Sprite" to="." method="_on_Sprite_draw"]
+[connection signal="pressed" from="SummonPopup/CloseWindow" to="." method="_on_CloseWindow_pressed"]
+[connection signal="button_up" from="SummonButton" to="." method="_on_SummonButton_button_up"]

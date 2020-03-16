@@ -1,0 +1,26 @@
+[gd_scene format=2]
+
+[node name="UserProfile" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.2, 0.0784314, 0.239216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 591.0
+margin_top = 349.0
+margin_right = 718.0
+margin_bottom = 380.0
+text = "Yep. Coming soon!"
+__meta__ = {
+"_edit_use_anchors_": false
+}

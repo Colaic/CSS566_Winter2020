@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Gacha Images/Character Sprites/GreenWarrior.png" type="Texture" id=1]
+[ext_resource path="res://Gacha Images/Character Sprites/BlueAssassin.png" type="Texture" id=2]
+[ext_resource path="res://Gacha Images/Character Sprites/GreenArcher.png" type="Texture" id=3]
+[ext_resource path="res://CharacterScripts/BlueAssassin.gd" type="Script" id=4]
+[ext_resource path="res://CharacterScripts/GreenWarrior.gd" type="Script" id=5]
+[ext_resource path="res://CharacterScripts/GreenArcher.gd" type="Script" id=6]
+
+[sub_resource type="AnimatedTexture" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GreenWarrior" type="Sprite" parent="."]
+position = Vector2( 221.022, 221.701 )
+texture = ExtResource( 1 )
+script = ExtResource( 5 )
+
+[node name="BlueAssassin" type="Sprite" parent="."]
+position = Vector2( 525.066, 219.524 )
+texture = ExtResource( 2 )
+script = ExtResource( 4 )
+
+[node name="GreenArcher" type="Sprite" parent="."]
+position = Vector2( 729.184, 208.913 )
+texture = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 438.743
+margin_top = 473.456
+margin_right = 626.743
+margin_bottom = 545.456
+text = "Continue"
+icon = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GreenWarriorLabel" type="RichTextLabel" parent="."]
+margin_left = 112.702
+margin_top = 396.634
+margin_right = 314.702
+margin_bottom = 440.634
+rect_pivot_offset = Vector2( -405.032, 101.718 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlueAssassinLabel" type="RichTextLabel" parent="."]
+margin_left = 433.933
+margin_top = 389.893
+margin_right = 635.933
+margin_bottom = 429.893
+rect_pivot_offset = Vector2( -405.032, 101.718 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GreenArcherLabel" type="RichTextLabel" parent="."]
+margin_left = 732.47
+margin_top = 399.869
+margin_right = 948.47
+margin_bottom = 439.869
+rect_pivot_offset = Vector2( -405.032, 101.718 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="ready" from="GreenWarrior" to="GreenWarrior" method="_on_GreenWarrior_ready"]
