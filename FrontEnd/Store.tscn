@@ -478,7 +478,7 @@ custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0.0705882, 0.0627451, 0.0627451, 1 )
 text = "0"
 
-[node name="SummonPanel" type="Popup" parent="."]
+[node name="SummonPopup" type="Popup" parent="."]
 visible = true
 margin_left = 402.155
 margin_top = 139.419
@@ -486,19 +486,19 @@ margin_right = 975.155
 margin_bottom = 735.419
 popup_exclusive = true
 
-[node name="ColorRect" type="ColorRect" parent="SummonPanel"]
+[node name="SummonPanel" type="ColorRect" parent="SummonPopup"]
 margin_left = 24.6271
 margin_top = -37.2017
 margin_right = 520.627
 margin_bottom = 553.798
 color = Color( 0.0392157, 0.792157, 0.741176, 1 )
 
-[node name="Sprite" type="Sprite" parent="SummonPanel/ColorRect"]
+[node name="Sprite" type="Sprite" parent="SummonPopup/SummonPanel"]
 position = Vector2( 243.189, 263.11 )
 scale = Vector2( 5.4803, 6.01713 )
 texture = ExtResource( 7 )
 
-[node name="CharacterName" type="Label" parent="SummonPanel/ColorRect"]
+[node name="CharacterName" type="Label" parent="SummonPopup/SummonPanel"]
 margin_left = 6.6882
 margin_top = 465.285
 margin_right = 477.688
@@ -511,7 +511,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CharacterLevel" type="Label" parent="SummonPanel/ColorRect"]
+[node name="CharacterLevel" type="Label" parent="SummonPopup/SummonPanel"]
 margin_left = 168.463
 margin_top = 5.75182
 margin_right = 331.463
@@ -523,7 +523,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CloseWindow" type="Button" parent="SummonPanel"]
+[node name="CloseWindow" type="Button" parent="SummonPopup"]
 margin_left = 187.536
 margin_top = 490.263
 margin_right = 356.536
@@ -574,6 +574,7 @@ position = Vector2( 86.957, 470.556 )
 scale = Vector2( 0.165889, 0.20801 )
 texture = ExtResource( 3 )
 [connection signal="pressed" from="Button" to="StoreInfo/HpAndMPList/HpGrid/Sprite" method="_on_Button_pressed"]
-[connection signal="ready" from="SummonPanel" to="." method="_on_SummonPanel_ready"]
-[connection signal="pressed" from="SummonPanel/CloseWindow" to="." method="_on_CloseWindow_pressed"]
+[connection signal="ready" from="SummonPopup" to="." method="_on_SummonPanel_ready"]
+[connection signal="draw" from="SummonPopup/SummonPanel/Sprite" to="." method="_on_Sprite_draw"]
+[connection signal="pressed" from="SummonPopup/CloseWindow" to="." method="_on_CloseWindow_pressed"]
 [connection signal="button_up" from="SummonButton" to="." method="_on_SummonButton_button_up"]
