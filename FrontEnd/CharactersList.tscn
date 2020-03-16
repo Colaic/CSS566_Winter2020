@@ -305,8 +305,8 @@ __meta__ = {
 }
 
 [node name="home_icon_" type="Sprite" parent="CharactersScreen/HomeButton"]
-position = Vector2( 514.816, 560.199 )
-scale = Vector2( 1.43094, 1.34276 )
+position = Vector2( 537.959, 526.784 )
+scale = Vector2( 1.11493, 1.12933 )
 texture = ExtResource( 5 )
 
 [node name="missions" type="Sprite" parent="CharactersScreen"]
