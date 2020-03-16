@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://BackButtonUserProfile.gd" type="Script" id=1]
 [ext_resource path="res://Image/Avatars/PNG/13.png" type="Texture" id=2]
+[ext_resource path="res://UserProfile.gd" type="Script" id=3]
 [ext_resource path="res://Image/Homepage.jpg" type="Texture" id=6]
 
 [node name="UserProfile" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -24,7 +26,7 @@ __meta__ = {
 }
 
 [node name="UserProfileBackground" type="Sprite" parent="ColorRect"]
-position = Vector2( 641.194, 360.509 )
+position = Vector2( 641.966, 361.509 )
 scale = Vector2( 0.213695, 0.180661 )
 texture = ExtResource( 6 )
 
@@ -40,104 +42,117 @@ __meta__ = {
 }
 
 [node name="UserProfileInfo" type="ColorRect" parent="."]
-margin_left = 67.0
+margin_left = 66.3366
 margin_top = 95.0
-margin_right = 1211.0
+margin_right = 1210.34
 margin_bottom = 694.0
 color = Color( 0.137255, 0.0666667, 0.2, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NicknameLabel" type="Label" parent="UserProfileInfo"]
-margin_left = 528.869
-margin_top = 191.81
-margin_right = 593.869
-margin_bottom = 205.81
-text = "Nickname"
+[node name="UsernameLabel" type="Label" parent="UserProfileInfo"]
+margin_left = 610.143
+margin_top = 186.473
+margin_right = 680.143
+margin_bottom = 200.473
+text = "Username:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NicknameTextField" type="TextEdit" parent="UserProfileInfo"]
-margin_left = 614.0
-margin_top = 186.0
-margin_right = 864.0
-margin_bottom = 212.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="GenderTextField" type="TextEdit" parent="UserProfileInfo"]
-margin_left = 614.0
-margin_top = 229.0
-margin_right = 864.0
-margin_bottom = 255.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="GenderLabel" type="Label" parent="UserProfileInfo"]
-margin_left = 546.391
-margin_top = 234.799
-margin_right = 593.391
-margin_bottom = 251.799
-text = "Gender"
-
-[node name="LevelTextField" type="TextEdit" parent="UserProfileInfo"]
-margin_left = 613.287
-margin_top = 273.0
-margin_right = 864.287
-margin_bottom = 300.0
-
-[node name="LevelLabel" type="Label" parent="UserProfileInfo"]
-margin_left = 559.932
-margin_top = 279.839
-margin_right = 593.932
-margin_bottom = 293.839
-text = "Level"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="EnergyLevelTextField" type="TextEdit" parent="UserProfileInfo"]
-margin_left = 614.0
-margin_top = 318.0
-margin_right = 865.0
-margin_bottom = 344.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="EnergyLevelLabel" type="Label" parent="UserProfileInfo"]
-margin_left = 513.666
-margin_top = 324.26
-margin_right = 593.666
-margin_bottom = 338.26
-text = "Energy Level"
-
-[node name="CurrencyTextField" type="TextEdit" parent="UserProfileInfo"]
-margin_left = 614.0
-margin_top = 362.0
-margin_right = 865.0
-margin_bottom = 389.0
+[node name="MissionLabel" type="Label" parent="UserProfileInfo"]
+margin_left = 624.869
+margin_top = 229.66
+margin_right = 678.869
+margin_bottom = 243.66
+text = "Mission:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CurrencyLabel" type="Label" parent="UserProfileInfo"]
-margin_left = 536.218
-margin_top = 368.587
-margin_right = 593.218
-margin_bottom = 382.587
-text = "Currency"
+margin_left = 619.307
+margin_top = 275.512
+margin_right = 679.307
+margin_bottom = 289.512
+rect_pivot_offset = Vector2( 41.0204, 7 )
+text = "Currency:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="SaveButton" type="Button" parent="UserProfileInfo"]
-margin_left = 487.22
-margin_top = 446.145
-margin_right = 596.22
-margin_bottom = 482.145
-text = "Save Profile"
+[node name="NumCharsLabel" type="Label" parent="UserProfileInfo"]
+margin_left = 536.706
+margin_top = 322.635
+margin_right = 679.706
+margin_bottom = 336.635
+rect_pivot_offset = Vector2( 205.222, 7.44122 )
+text = "Number of Characters:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NumItemsLabel" type="Label" parent="UserProfileInfo"]
+margin_left = 564.0
+margin_top = 370.0
+margin_right = 682.0
+margin_bottom = 384.0
+rect_pivot_offset = Vector2( 205.222, 7.44122 )
+text = "Number of Items:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Username" type="Label" parent="UserProfileInfo"]
+margin_left = 709.993
+margin_top = 185.423
+margin_right = 789.993
+margin_bottom = 199.423
+text = "<username>"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mission" type="Label" parent="UserProfileInfo"]
+margin_left = 713.459
+margin_top = 229.987
+margin_right = 780.459
+margin_bottom = 243.987
+text = "<mission>"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Currency" type="Label" parent="UserProfileInfo"]
+margin_left = 714.447
+margin_top = 276.462
+margin_right = 785.447
+margin_bottom = 290.462
+rect_pivot_offset = Vector2( 48.7105, 7 )
+text = "<currency>"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NumChars" type="Label" parent="UserProfileInfo"]
+margin_left = 715.11
+margin_top = 322.595
+margin_right = 832.11
+margin_bottom = 336.595
+rect_pivot_offset = Vector2( 74.8826, 14 )
+text = "<num_characters>"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NumItems" type="Label" parent="UserProfileInfo"]
+margin_left = 715.11
+margin_top = 368.595
+margin_right = 832.11
+margin_bottom = 382.595
+rect_pivot_offset = Vector2( 74.8826, 14 )
+text = "<num_items>"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -152,15 +167,16 @@ __meta__ = {
 }
 
 [node name="AvatarIcon" type="Sprite" parent="Avatar"]
-position = Vector2( 80.4306, 74.7802 )
+position = Vector2( 80.4306, 77.7802 )
 scale = Vector2( 0.309472, 0.292145 )
 texture = ExtResource( 2 )
 
 [node name="ChangeButton" type="Button" parent="Avatar"]
 margin_left = 5.06946
-margin_top = 171.076
+margin_top = 174.076
 margin_right = 157.069
-margin_bottom = 198.076
+margin_bottom = 201.076
+disabled = true
 text = "Change Profile Picture"
 __meta__ = {
 "_edit_use_anchors_": false
