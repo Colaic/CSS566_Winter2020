@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://BackButtonUserProfile.gd" type="Script" id=1]
 [ext_resource path="res://Image/Avatars/PNG/13.png" type="Texture" id=2]
 [ext_resource path="res://Image/Characters/PNG/5.png" type="Texture" id=3]
 [ext_resource path="res://Image/Characters/PNG/4.png" type="Texture" id=4]
 [ext_resource path="res://Image/Characters/PNG/13.png" type="Texture" id=5]
+[ext_resource path="res://Image/Homepage.jpg" type="Texture" id=6]
+[ext_resource path="res://Image/Characters/PNG/14.png" type="Texture" id=7]
+[ext_resource path="res://Image/Characters/PNG/15.png" type="Texture" id=8]
+[ext_resource path="res://Image/Characters/PNG/9.png" type="Texture" id=9]
+[ext_resource path="res://Image/Characters/PNG/7.png" type="Texture" id=10]
+[ext_resource path="res://Image/Characters/PNG/2.png" type="Texture" id=11]
+[ext_resource path="res://Image/Characters/PNG/8.png" type="Texture" id=12]
+[ext_resource path="res://Image/Characters/PNG/1.png" type="Texture" id=13]
+[ext_resource path="res://Image/Characters/PNG/3.png" type="Texture" id=14]
 
 [node name="UserProfile" type="Control"]
 anchor_right = 1.0
@@ -21,16 +30,20 @@ margin_left = -1.4917
 margin_top = -0.727097
 margin_right = -1.4917
 margin_bottom = -0.727112
-color = Color( 0.2, 0.0784314, 0.239216, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="UserProfileBackground" type="Sprite" parent="ColorRect"]
+position = Vector2( 641.194, 360.509 )
+scale = Vector2( 0.213695, 0.180661 )
+texture = ExtResource( 6 )
+
 [node name="BackButtonUserProfile" type="Button" parent="."]
-margin_left = 33.3314
-margin_top = 32.1288
-margin_right = 166.331
-margin_bottom = 69.1288
+margin_left = 65.5631
+margin_top = 29.4187
+margin_right = 198.563
+margin_bottom = 64.4187
 text = "Back"
 script = ExtResource( 1 )
 __meta__ = {
@@ -38,10 +51,10 @@ __meta__ = {
 }
 
 [node name="UserProfileInfo" type="ColorRect" parent="."]
-margin_left = 32.1259
-margin_top = 102.118
-margin_right = 1235.13
-margin_bottom = 720.118
+margin_left = 67.0
+margin_top = 98.0
+margin_right = 1211.0
+margin_bottom = 697.0
 color = Color( 0.137255, 0.0666667, 0.2, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -57,12 +70,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="UserProfileInfo"]
-margin_left = 79.1752
-margin_top = 200.225
-margin_right = 213.175
-margin_bottom = 227.225
+[node name="ChangeButton" type="Button" parent="UserProfileInfo"]
+margin_left = 74.6835
+margin_top = 204.076
+margin_right = 208.683
+margin_bottom = 231.076
 text = "Change"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="NicknameTextField" type="TextEdit" parent="UserProfileInfo"]
 margin_left = 368.0
@@ -75,9 +91,12 @@ __meta__ = {
 
 [node name="GenderTextField" type="TextEdit" parent="UserProfileInfo"]
 margin_left = 368.0
-margin_top = 74.0
+margin_top = 76.0
 margin_right = 618.0
 margin_bottom = 102.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="GenderLabel" type="Label" parent="UserProfileInfo"]
 margin_left = 300.391
@@ -135,19 +154,19 @@ margin_bottom = 229.587
 text = "Currency"
 
 [node name="CharactersListColor" type="ColorRect" parent="UserProfileInfo"]
-margin_left = 364.0
-margin_top = 315.0
-margin_right = 854.0
-margin_bottom = 594.0
-color = Color( 0.0784314, 0.0941176, 0.117647, 1 )
+margin_left = 316.777
+margin_top = 290.73
+margin_right = 833.777
+margin_bottom = 570.73
+color = Color( 0.0470588, 0.054902, 0.14902, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CharactersGrid" type="GridContainer" parent="UserProfileInfo/CharactersListColor"]
-margin_left = 21.0
-margin_top = 41.0
-margin_right = 464.0
+margin_left = 18.0
+margin_top = 38.0
+margin_right = 497.0
 margin_bottom = 275.0
 columns = 5
 __meta__ = {
@@ -155,27 +174,77 @@ __meta__ = {
 }
 
 [node name="Character1" type="Sprite" parent="UserProfileInfo/CharactersListColor/CharactersGrid"]
-position = Vector2( 28.9648, 26.5662 )
+position = Vector2( 33.6265, 26.5662 )
 scale = Vector2( 0.0965851, 0.0976592 )
 texture = ExtResource( 4 )
 
 [node name="Character2" type="Sprite" parent="UserProfileInfo/CharactersListColor/CharactersGrid"]
-position = Vector2( 102.246, 28.4624 )
+position = Vector2( 112.286, 29.1797 )
 scale = Vector2( 0.099226, 0.094269 )
 texture = ExtResource( 3 )
 
 [node name="Character3" type="Sprite" parent="UserProfileInfo/CharactersListColor/CharactersGrid"]
-position = Vector2( 177.844, 28.0991 )
+position = Vector2( 188.602, 28.0991 )
 scale = Vector2( 0.104183, 0.0985177 )
 texture = ExtResource( 5 )
 
 [node name="Character4" type="Sprite" parent="UserProfileInfo/CharactersListColor/CharactersGrid"]
+position = Vector2( 271.85, 27.9053 )
+scale = Vector2( 0.10927, 0.0975574 )
+texture = ExtResource( 9 )
 
 [node name="Character5" type="Sprite" parent="UserProfileInfo/CharactersListColor/CharactersGrid"]
+position = Vector2( 359.269, 27.2964 )
+scale = Vector2( 0.107986, 0.089823 )
+texture = ExtResource( 7 )
 
 [node name="Character6" type="Sprite" parent="UserProfileInfo/CharactersListColor/CharactersGrid"]
+position = Vector2( 445.286, 27.1357 )
+scale = Vector2( 0.0970546, 0.0908342 )
+texture = ExtResource( 14 )
 
 [node name="Character7" type="Sprite" parent="UserProfileInfo/CharactersListColor/CharactersGrid"]
+position = Vector2( 34.956, 100.183 )
+scale = Vector2( 0.106113, 0.107521 )
+texture = ExtResource( 11 )
+
+[node name="Character8" type="Sprite" parent="UserProfileInfo/CharactersListColor/CharactersGrid"]
+position = Vector2( 113.877, 103.787 )
+scale = Vector2( 0.110336, 0.113152 )
+texture = ExtResource( 13 )
+
+[node name="Character9" type="Sprite" parent="UserProfileInfo/CharactersListColor/CharactersGrid"]
+position = Vector2( 188.113, 105.228 )
+scale = Vector2( 0.113152, 0.0990746 )
+texture = ExtResource( 10 )
+
+[node name="Character10" type="Sprite" parent="UserProfileInfo/CharactersListColor/CharactersGrid"]
+position = Vector2( 270.999, 104.147 )
+scale = Vector2( 0.115967, 0.108928 )
+texture = ExtResource( 12 )
+
+[node name="Character11" type="Sprite" parent="UserProfileInfo/CharactersListColor/CharactersGrid"]
+position = Vector2( 356.766, 103.426 )
+scale = Vector2( 0.132859, 0.106113 )
+texture = ExtResource( 8 )
+
+[node name="Character12" type="Sprite" parent="UserProfileInfo/CharactersListColor/CharactersGrid"]
+
+[node name="Character13" type="Sprite" parent="UserProfileInfo/CharactersListColor/CharactersGrid"]
+
+[node name="Character14" type="Sprite" parent="UserProfileInfo/CharactersListColor/CharactersGrid"]
+
+[node name="Character15" type="Sprite" parent="UserProfileInfo/CharactersListColor/CharactersGrid"]
+
+[node name="Character16" type="Sprite" parent="UserProfileInfo/CharactersListColor/CharactersGrid"]
+
+[node name="Character17" type="Sprite" parent="UserProfileInfo/CharactersListColor/CharactersGrid"]
+
+[node name="Character18" type="Sprite" parent="UserProfileInfo/CharactersListColor/CharactersGrid"]
+
+[node name="Character19" type="Sprite" parent="UserProfileInfo/CharactersListColor/CharactersGrid"]
+
+[node name="Character20" type="Sprite" parent="UserProfileInfo/CharactersListColor/CharactersGrid"]
 
 [node name="CollectedCharactersLabel" type="Label" parent="UserProfileInfo/CharactersListColor"]
 margin_left = 9.65628
@@ -184,17 +253,27 @@ margin_right = 140.656
 margin_bottom = 23.3216
 text = "Collected Characters"
 
+[node name="SaveButton" type="Button" parent="UserProfileInfo"]
+margin_left = 992.22
+margin_top = 34.145
+margin_right = 1101.22
+margin_bottom = 70.145
+text = "Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Avatar" type="Panel" parent="."]
-margin_left = 98.0
+margin_left = 128.614
 margin_top = 135.0
-margin_right = 259.0
+margin_right = 289.614
 margin_bottom = 286.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AvatarIcon" type="Sprite" parent="Avatar"]
-position = Vector2( 80.4306, 75.7802 )
+position = Vector2( 80.4306, 74.7802 )
 scale = Vector2( 0.309472, 0.292145 )
 texture = ExtResource( 2 )
 [connection signal="pressed" from="BackButtonUserProfile" to="BackButtonUserProfile" method="_on_BackButtonUserProfile_pressed"]

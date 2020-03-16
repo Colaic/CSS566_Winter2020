@@ -1,0 +1,354 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Image/WelcomePageBackgound.jpg" type="Texture" id=1]
+[ext_resource path="res://Image/Characters/PlayerCharacters/c1_GreenWarrior.png" type="Texture" id=2]
+[ext_resource path="res://Image/Characters/PlayerCharacters/c2_BlueAssassin.png" type="Texture" id=3]
+[ext_resource path="res://Image/Characters/PlayerCharacters/c3_GreenArcher.png" type="Texture" id=4]
+[ext_resource path="res://Image/Characters/Misc/home_icon_.png" type="Texture" id=5]
+[ext_resource path="res://Image/Characters/Misc/card_empty.png" type="Texture" id=6]
+[ext_resource path="res://HomeButton.gd" type="Script" id=7]
+[ext_resource path="res://Image/Characters/Misc/Armor_Bonus.png" type="Texture" id=8]
+[ext_resource path="res://Image/Characters/Misc/Forward_BTN.png" type="Texture" id=9]
+[ext_resource path="res://Image/missions.png" type="Texture" id=10]
+[ext_resource path="res://Image/Characters/Misc/Settings_BTN.png" type="Texture" id=11]
+[ext_resource path="res://Image/Characters/Misc/card_level1.png" type="Texture" id=12]
+[ext_resource path="res://Image/library.png" type="Texture" id=13]
+[ext_resource path="res://Image/Characters/Misc/Shop_BTN.png" type="Texture" id=14]
+[ext_resource path="res://Image/Characters/Misc/Meteor_03.png" type="Texture" id=15]
+[ext_resource path="res://Image/Characters/Misc/Facebook_BTN.png" type="Texture" id=16]
+[ext_resource path="res://Image/Characters/Misc/More_Games_BTN.png" type="Texture" id=17]
+[ext_resource path="res://Image/Characters/Misc/Twitter_BTN.png" type="Texture" id=18]
+[ext_resource path="res://Image/Characters/Misc/Header.png" type="Texture" id=19]
+
+[sub_resource type="ImageTexture" id=1]
+
+[node name="MenuPage" type="Sprite"]
+position = Vector2( 422.926, 175.124 )
+scale = Vector2( 0.216748, 0.182002 )
+texture = ExtResource( 1 )
+offset = Vector2( 996.551, 967.02 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2003.45
+margin_top = -1032.98
+margin_right = -2003.45
+margin_bottom = -1032.98
+rect_scale = Vector2( 1.85605, 2.18919 )
+texture = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WelcomePageBackgound" type="Sprite" parent="Control/TextureRect2"]
+position = Vector2( 1653.82, 1038.63 )
+texture = ExtResource( 1 )
+
+[node name="ItemList" type="ItemList" parent="."]
+margin_left = -1501.02
+margin_top = -412.748
+margin_right = -1464.02
+margin_bottom = -366.748
+rect_scale = Vector2( 136.576, 68.7952 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WelcomePageBackgound" type="Sprite" parent="ItemList"]
+position = Vector2( 19.6849, 25.3846 )
+scale = Vector2( 0.0129193, -0.0263349 )
+texture = ExtResource( 1 )
+
+[node name="Char1" type="Panel" parent="ItemList"]
+margin_left = 3.65564
+margin_top = 10.9413
+margin_right = 43.6556
+margin_bottom = 50.9413
+rect_scale = Vector2( 0.0161021, 0.0282369 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="card_level1" type="Sprite" parent="ItemList/Char1"]
+position = Vector2( 177.128, 59.5883 )
+scale = Vector2( 0.654962, 0.757534 )
+texture = ExtResource( 12 )
+
+[node name="c1_GreenWarrior" type="Sprite" parent="ItemList/Char1"]
+position = Vector2( 1.95305, 52.1184 )
+scale = Vector2( 0.870574, 0.890698 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="ItemList/Char1"]
+margin_left = -118.118
+margin_top = 272.268
+margin_right = -28.1174
+margin_bottom = 303.268
+rect_scale = Vector2( 2.55185, 4.23824 )
+text = "Green Warrior
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Armor_Bonus" type="Sprite" parent="ItemList/Char1"]
+position = Vector2( 90.3449, -169.987 )
+scale = Vector2( 0.284027, 0.278376 )
+texture = ExtResource( 8 )
+
+[node name="Char2" type="Panel" parent="ItemList"]
+margin_left = 10.2353
+margin_top = 11.2304
+margin_right = 50.2353
+margin_bottom = 51.2304
+rect_scale = Vector2( 0.0156165, 0.0313822 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="card_level3" type="Sprite" parent="ItemList/Char2"]
+position = Vector2( 260.326, 60.0578 )
+scale = Vector2( 0.675327, 0.681609 )
+texture = ExtResource( 12 )
+
+[node name="c2_BlueAssassin" type="Sprite" parent="ItemList/Char2"]
+position = Vector2( 65.6873, 50.2172 )
+scale = Vector2( 0.829217, 0.830538 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="ItemList/Char2"]
+margin_left = -33.9665
+margin_top = 249.642
+margin_right = 56.0336
+margin_bottom = 280.642
+rect_scale = Vector2( 2.66984, 3.80512 )
+text = "Blue Assassin"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Meteor_03" type="Sprite" parent="ItemList/Char2"]
+position = Vector2( 173.785, -145.2 )
+scale = Vector2( 0.25181, 0.262384 )
+texture = ExtResource( 15 )
+
+[node name="Char3" type="Panel" parent="ItemList"]
+margin_left = 16.2426
+margin_top = 10.3339
+margin_right = 56.2426
+margin_bottom = 50.3339
+rect_scale = Vector2( 0.017434, 0.0290375 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="card_level4" type="Sprite" parent="ItemList/Char3"]
+position = Vector2( 304.715, 100.343 )
+scale = Vector2( 0.604925, 0.736647 )
+texture = ExtResource( 12 )
+
+[node name="c3_GreenArcher" type="Sprite" parent="ItemList/Char3"]
+position = Vector2( 53.9825, 89.2612 )
+scale = Vector2( 0.790179, 0.872566 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="ItemList/Char3"]
+margin_left = 24.2883
+margin_top = 312.034
+margin_right = 114.288
+margin_bottom = 343.034
+rect_scale = Vector2( 2.66177, 3.52353 )
+text = "Green Archer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Armor_Bonus2" type="Sprite" parent="ItemList/Char3"]
+position = Vector2( 225.262, -125.061 )
+scale = Vector2( 0.262328, 0.270701 )
+texture = ExtResource( 8 )
+
+[node name="Char4" type="Panel" parent="ItemList"]
+margin_left = 24.3999
+margin_top = 14.2305
+margin_right = 116.4
+margin_bottom = 91.2305
+rect_scale = Vector2( 0.017434, 0.0290375 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="card_empty3" type="Sprite" parent="ItemList/Char4"]
+position = Vector2( 263.762, -38.1463 )
+scale = Vector2( 1.03928, 1.25129 )
+texture = ExtResource( 6 )
+
+[node name="Char5" type="Panel" parent="ItemList"]
+margin_left = 33.3182
+margin_top = 9.94067
+margin_right = 125.318
+margin_bottom = 86.9407
+rect_scale = Vector2( 0.017434, 0.0290375 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="card_empty2" type="Sprite" parent="ItemList/Char5"]
+position = Vector2( 153.32, 95.1138 )
+scale = Vector2( 1.03928, 1.25129 )
+texture = ExtResource( 6 )
+
+[node name="Char6" type="Panel" parent="ItemList"]
+margin_left = 2.73389
+margin_top = 32.9697
+margin_right = 94.7339
+margin_bottom = 109.97
+rect_scale = Vector2( 0.017434, 0.0290375 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="card_empty" type="Sprite" parent="ItemList/Char6"]
+position = Vector2( 226.996, 59.8109 )
+scale = Vector2( 1.03928, 1.25129 )
+texture = ExtResource( 6 )
+
+[node name="Char7" type="Panel" parent="ItemList"]
+margin_left = 10.2407
+margin_top = 32.8716
+margin_right = 102.241
+margin_bottom = 109.872
+rect_scale = Vector2( 0.017434, 0.0290375 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="card_empty" type="Sprite" parent="ItemList/Char7"]
+position = Vector2( 232.837, 63.9568 )
+scale = Vector2( 1.03928, 1.25129 )
+texture = ExtResource( 6 )
+
+[node name="Char8" type="Panel" parent="ItemList"]
+margin_left = 17.3327
+margin_top = 32.8716
+margin_right = 109.333
+margin_bottom = 109.872
+rect_scale = Vector2( 0.017434, 0.0290375 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="card_empty" type="Sprite" parent="ItemList/Char8"]
+position = Vector2( 250.361, 63.9568 )
+scale = Vector2( 1.03928, 1.25129 )
+texture = ExtResource( 6 )
+
+[node name="Char9" type="Panel" parent="ItemList"]
+margin_left = 24.0515
+margin_top = 33.0676
+margin_right = 116.052
+margin_bottom = 110.068
+rect_scale = Vector2( 0.017434, 0.0290375 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="card_empty" type="Sprite" parent="ItemList/Char9"]
+position = Vector2( 262.044, 63.9569 )
+scale = Vector2( 1.03928, 1.25129 )
+texture = ExtResource( 6 )
+
+[node name="Char10" type="Panel" parent="ItemList"]
+margin_left = 31.2264
+margin_top = 33.0676
+margin_right = 123.226
+margin_bottom = 110.068
+rect_scale = Vector2( 0.017434, 0.0290375 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="card_empty" type="Sprite" parent="ItemList/Char10"]
+position = Vector2( 270.806, 59.8109 )
+scale = Vector2( 1.03928, 1.25129 )
+texture = ExtResource( 6 )
+
+[node name="CharactersScreen" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2003.45
+margin_top = -1032.98
+margin_right = -2003.45
+margin_bottom = -1032.98
+rect_scale = Vector2( 1.00818, 0.962003 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HomeButton" type="Button" parent="CharactersScreen"]
+margin_left = 532.859
+margin_top = 233.26
+margin_right = 1667.86
+margin_bottom = 1335.26
+rect_scale = Vector2( 0.296586, 0.341834 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="home_icon_" type="Sprite" parent="CharactersScreen/HomeButton"]
+position = Vector2( 537.959, 526.784 )
+scale = Vector2( 1.11493, 1.12933 )
+texture = ExtResource( 5 )
+
+[node name="missions" type="Sprite" parent="CharactersScreen"]
+position = Vector2( 4559.96, 415.645 )
+scale = Vector2( 0.261772, 0.248682 )
+texture = ExtResource( 10 )
+
+[node name="library" type="Sprite" parent="CharactersScreen"]
+position = Vector2( 4819.06, 424.367 )
+scale = Vector2( 0.392799, 0.529252 )
+texture = ExtResource( 13 )
+
+[node name="Forward_BTN" type="Sprite" parent="CharactersScreen"]
+position = Vector2( 5604.82, 1450.22 )
+texture = ExtResource( 9 )
+
+[node name="Forward_BTN2" type="Sprite" parent="CharactersScreen"]
+position = Vector2( 5594.06, 3013.68 )
+texture = ExtResource( 9 )
+
+[node name="Shop_BTN" type="Sprite" parent="CharactersScreen"]
+position = Vector2( 5095.77, 423.035 )
+texture = ExtResource( 14 )
+
+[node name="Settings_BTN" type="Sprite" parent="CharactersScreen"]
+position = Vector2( 5385.6, 419.234 )
+texture = ExtResource( 11 )
+
+[node name="Twitter_BTN" type="Sprite" parent="CharactersScreen"]
+position = Vector2( 272.383, 3654.51 )
+texture = ExtResource( 18 )
+
+[node name="Facebook_BTN" type="Sprite" parent="CharactersScreen"]
+position = Vector2( 272.383, 3349.18 )
+texture = ExtResource( 16 )
+
+[node name="More_Games_BTN" type="Sprite" parent="CharactersScreen"]
+position = Vector2( 260.458, 3050.95 )
+texture = ExtResource( 17 )
+
+[node name="Header" type="Sprite" parent="CharactersScreen"]
+position = Vector2( 2981.78, 383.805 )
+scale = Vector2( 1.74547, 1.87801 )
+texture = ExtResource( 19 )
+[connection signal="button_up" from="CharactersScreen/HomeButton" to="CharactersScreen/HomeButton" method="_on_HomeButton_button_up"]
