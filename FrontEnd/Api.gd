@@ -20,7 +20,7 @@ var _refresh_token = null
 var _access_token = null
 
 #Checks if user signed up in this session.
-var _user_just_signed_up = null
+var _user_just_signed_up = false
 
 # Called when the node enters the scene tree for the first time.
 func _init():
@@ -44,6 +44,30 @@ func _http_connect():
 	while _http.get_status() == HTTPClient.STATUS_CONNECTING or _http.get_status() == HTTPClient.STATUS_RESOLVING:
 		_http.poll()
 		OS.delay_msec(500)
+
+#A function which retrieves the user's currency.	
+func get_currency():
+	var response = _get_player()
+	
+	#If retrieval was successful, return the value of the currency.
+	if(response["success"]):
+		return response["dict"][0]["currency"]
+		
+	#If we get here there was an error, so return 0.
+	return 0
+	
+#A function which retrieves the user's currency.	
+func set_currency(new_value):
+	#Create a dictionary with teh new value for the currency.
+	var dict = { "currency" : new_value }
+	var response = _update_player(dict)
+	
+	#If retrieval was successful, return the dictionary.
+	if(response["success"]):
+		return response["dict"]
+		
+	#If we get here there was an error, so return an empty dictionary.
+	return {}
 		
 #A method which authenticates the user.
 func login(username, password):
@@ -108,12 +132,12 @@ func _update_player(data):
 		
 	#If it was successful, parse the data and return the dictionary.
 	if(response["code"] == 200):
-		return {"success" : true, "msg": JSON.parse(response["data"]).result}
+		return {"success" : true, "dict": JSON.parse(response["data"]).result}
 
 	#If it was not successful, return an empty dictionary (and print data).
 	print("_update_player: Error: Did not get OK from the server.")
 	print(response["data"])
-	return {"success" : false, "msg": response["data"]}
+	return {"success" : false, "dict": response["data"]}
 	
 	
 #A method for getting all the player information.

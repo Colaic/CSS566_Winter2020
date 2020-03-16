@@ -51,7 +51,9 @@ func _on_LoginButton_button_up():
 	if(results["success"]):		
 		#If the uesr signed up, take them to user profile. Otherwise to homepage.
 		if(server._user_signed_up):
-			get_tree().change_scene("res://UserProfile.tscn")
+			#Uncommented since it's not working as intended yet.
+			#get_tree().change_scene("res://UserProfile.tscn")
+			get_tree().change_scene("res://Homepage.tscn")
 		else:
 			get_tree().change_scene("res://Homepage.tscn")
 	else:
