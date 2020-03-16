@@ -50,6 +50,8 @@ func _http_connect():
 	while _http.get_status() == HTTPClient.STATUS_CONNECTING or _http.get_status() == HTTPClient.STATUS_RESOLVING:
 		_http.poll()
 		OS.delay_msec(500)
+		
+# Player data access functions #################################################
 
 #A function which retrieves the user's currency.	
 func get_currency():
@@ -78,7 +80,7 @@ func get_mission_num():
 	
 #A function which retrieves the user's mission number.	
 func set_mission_num(new_value):
-	#Create a dictionary with teh new value for the currency.
+	#Create a dictionary with teh new value.
 	var dict = { "missionNum" : new_value }
 	var response = _update_player(dict)
 	
@@ -90,6 +92,30 @@ func set_mission_num(new_value):
 	#If we get here there was an error, so return an empty dictionary.
 	print("set_mission_num: Error: Could not update the user info.")
 	return {}
+	
+#A function which retrieves all the user's characters.	
+func get_characters():
+	#The data is already cached, so just return it.
+	return _characters
+	
+#A function which retrieves the user's mission number.	
+func add_character(new_character_id, new_character_name):
+	#Add the character to the current list of characters.
+	_characters.append({"id" : new_character_id, "name" : new_character_name})
+	
+	#Create a dictionary with teh new value for the characters.
+	var dict = { "characters" : _characters }
+	var response = _update_player(dict)
+	
+	#If retrieval was successful, return the dictionary.
+	if(response["success"]):
+		return true
+		
+	#If we get here there was an error, so return an empty dictionary.
+	print("set_mission_num: Error: Could not update the user info.")
+	return false
+	
+################################################################################
 		
 #A method which authenticates the user.
 func login(username, password):

@@ -71,12 +71,10 @@ __meta__ = {
 }
 
 [node name="PasswordTextBox" type="TextEdit" parent="WelcomeScene"]
-anchor_right = 0.273
-anchor_bottom = 0.558
 margin_left = 512.224
 margin_top = 334.0
-margin_right = 409.784
-margin_bottom = -31.76
+margin_right = 759.224
+margin_bottom = 370.0
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false

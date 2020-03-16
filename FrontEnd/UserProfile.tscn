@@ -65,7 +65,7 @@ margin_left = 282.869
 margin_top = 38.8101
 margin_right = 347.869
 margin_bottom = 52.8101
-text = "Nickname"
+text = "Username"
 __meta__ = {
 "_edit_use_anchors_": false
 }
