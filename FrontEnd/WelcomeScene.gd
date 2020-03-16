@@ -1,7 +1,5 @@
 extends Node
 
-var _user_signed_up = false
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -34,7 +32,6 @@ func _on_SignupButton_button_up():
 	if(results["success"]):
 		#Change the scene if successful.
 		set_status("Signup Successful. Please Login.")
-		_user_signed_up = true;
 	else:
 		set_status("Signup Failed. " + results["msg"])
 	

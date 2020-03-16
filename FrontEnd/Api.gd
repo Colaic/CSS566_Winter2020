@@ -98,7 +98,7 @@ func get_characters():
 	#The data is already cached, so just return it.
 	return _characters
 	
-#A function which retrieves the user's mission number.	
+#A function which adds a new character to player's characters.	
 func add_character(new_character_id, new_character_name):
 	#Add the character to the current list of characters.
 	_characters.append({"id" : new_character_id, "name" : new_character_name})
@@ -112,7 +112,40 @@ func add_character(new_character_id, new_character_name):
 		return true
 		
 	#If we get here there was an error, so return an empty dictionary.
-	print("set_mission_num: Error: Could not update the user info.")
+	print("add_character: Error: Could not update the user info.")
+	return false
+	
+
+#A function which retrieves all the user's items.	
+func get_items():
+	#The data is already cached, so just return it.
+	return _user_items
+	
+#A function which adds a new item to user's items.	
+func add_item(new_item_id, new_item_name):
+	var item_is_new = true
+	
+	#Check if the item already exists in the items.
+	for item in _user_items:
+		#Increase the item number if it already exists.
+		if(item["item"]["id"] == new_item_id):
+			item_is_new = false
+			item["count"] = item["count"] + 1
+			
+	#If the item did not exist, add it.
+	if(item_is_new):
+		_user_items.append({"item" : {"id" : new_item_id, "name" : new_item_name}, "count" : 1})
+	
+	#Create a dictionary with teh new value for the characters.
+	var dict = { "userItem" : _user_items }
+	var response = _update_player(dict)
+	
+	#If retrieval was successful, return the dictionary.
+	if(response["success"]):
+		return true
+		
+	#If we get here there was an error, so return an empty dictionary.
+	print("add_item: Error: Could not update the user info.")
 	return false
 	
 ################################################################################
