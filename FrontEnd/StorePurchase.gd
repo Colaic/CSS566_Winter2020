@@ -1,6 +1,7 @@
 extends Control
 
 const SUMMON_COST = 1000
+onready var server = get_node("/root/Api")
 var userCurrency
 var summonSprite
 var summonSpriteName
@@ -9,9 +10,8 @@ var rng = RandomNumberGenerator.new()
 
 # enter store scene with updated userCurrency
 func _ready():
-	randomize() # somehow this is doesn't work as the seed is always the same...
-	
-	userCurrency =  10000 # needs to be API GET call to DB
+	#randomize() # somehow this is doesn't work as the seed is always the same...
+	userCurrency = server.get_currency()
 	get_node("CurrencyWidget/RichTextLabel").text = str(userCurrency)
 
 # Character summon button, can only summon if user has currency > SUMMON_COST
@@ -100,5 +100,6 @@ func subtractCurrency(cost):
 		print("User has no more currency available.")
 	else:
 		userCurrency -= cost # needs to be API POST call to DB
+		server.set_currency(userCurrency)
 		get_node("CurrencyWidget/RichTextLabel").text = str(userCurrency)
 	

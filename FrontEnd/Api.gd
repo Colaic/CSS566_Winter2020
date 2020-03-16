@@ -10,17 +10,23 @@ const _ADDR_SIGNUP = "/db/player/create"
 const _ADDR_PLAYER = "/db/player"
 const _ADDR_CHPASS = "/db/player/change_password"
 
-# Class variables
+#Class variables
 var _http = null
 var _user = null
 var _pass = null
+
+#Used to cache user stats.
+var _currency = null
+var _mission_num = null
+var _characters = null
+var _user_items = null
 
 #Tokens for accessing the API.
 var _refresh_token = null
 var _access_token = null
 
 #Checks if user signed up in this session.
-var _user_just_signed_up = null
+var _user_just_signed_up = false
 
 # Called when the node enters the scene tree for the first time.
 func _init():
@@ -45,6 +51,72 @@ func _http_connect():
 		_http.poll()
 		OS.delay_msec(500)
 		
+# Player data access functions #################################################
+
+#A function which retrieves the user's currency.	
+func get_currency():
+	#The data is already cached, so just return it.
+	return _currency
+	
+#A function which retrieves the user's currency.	
+func set_currency(new_value):
+	#Create a dictionary with teh new value for the currency.
+	var dict = { "currency" : new_value }
+	var response = _update_player(dict)
+	
+	#If retrieval was successful, return the dictionary.
+	if(response["success"]):
+		_currency = new_value
+		return response["dict"]
+		
+	#If we get here there was an error, so return an empty dictionary.
+	print("set_currency: Error: Could not update the user info.")
+	return {}
+	
+#A function which retrieves the user's mission number.	
+func get_mission_num():
+	#The data is already cached, so just return it.
+	return _mission_num
+	
+#A function which retrieves the user's mission number.	
+func set_mission_num(new_value):
+	#Create a dictionary with teh new value.
+	var dict = { "missionNum" : new_value }
+	var response = _update_player(dict)
+	
+	#If retrieval was successful, return the dictionary.
+	if(response["success"]):
+		_mission_num = new_value
+		return response["dict"]
+		
+	#If we get here there was an error, so return an empty dictionary.
+	print("set_mission_num: Error: Could not update the user info.")
+	return {}
+	
+#A function which retrieves all the user's characters.	
+func get_characters():
+	#The data is already cached, so just return it.
+	return _characters
+	
+#A function which retrieves the user's mission number.	
+func add_character(new_character_id, new_character_name):
+	#Add the character to the current list of characters.
+	_characters.append({"id" : new_character_id, "name" : new_character_name})
+	
+	#Create a dictionary with teh new value for the characters.
+	var dict = { "characters" : _characters }
+	var response = _update_player(dict)
+	
+	#If retrieval was successful, return the dictionary.
+	if(response["success"]):
+		return true
+		
+	#If we get here there was an error, so return an empty dictionary.
+	print("set_mission_num: Error: Could not update the user info.")
+	return false
+	
+################################################################################
+		
 #A method which authenticates the user.
 func login(username, password):
 	#Set the username and password.
@@ -55,8 +127,15 @@ func login(username, password):
 	print("Logging in user " + _user + "...")
 	
 	#Request tokens from the server based on the username and password.
-	return _update_tokens()
+	var tk_results = _update_tokens()
 	
+	#If the request was successful, get the player data.
+	if(tk_results["success"]):
+		_get_player()
+	else:
+		print("login: Error: Could not get player information.")
+	
+	return tk_results
 
 # A method for signing up the user
 func signup(username, password):
@@ -108,12 +187,12 @@ func _update_player(data):
 		
 	#If it was successful, parse the data and return the dictionary.
 	if(response["code"] == 200):
-		return {"success" : true, "msg": JSON.parse(response["data"]).result}
+		return {"success" : true, "dict": JSON.parse(response["data"]).result}
 
 	#If it was not successful, return an empty dictionary (and print data).
 	print("_update_player: Error: Did not get OK from the server.")
 	print(response["data"])
-	return {"success" : false, "msg": response["data"]}
+	return {"success" : false, "dict": response["data"]}
 	
 	
 #A method for getting all the player information.
@@ -126,14 +205,18 @@ func _get_player():
 		_update_tokens()
 		response = _get(_ADDR_PLAYER)
 		
-	#If it was successful, parse the data and return the dictionary.
+	#If it was successful, parse the data and update the cache.
 	if(response["code"] == 200):
-		return {"success" : true, "dict": JSON.parse(response["data"]).result}
+		_currency = JSON.parse(response["data"]).result[0]["currency"]
+		_mission_num = JSON.parse(response["data"]).result[0]["missionNum"]
+		_characters = JSON.parse(response["data"]).result[0]["characters"]
+		_user_items = JSON.parse(response["data"]).result[0]["userItem"]
+		return true
 
 	#If it was not successful, return an empty dictionary (and print data).
 	print("_get_player: Error: Did not get OK from the server.")
 	print(response["data"])
-	return {"success" : false, "dict": {}}
+	return false
 
 
 # A method which requests new tokens from the server, and updates the class variables.
