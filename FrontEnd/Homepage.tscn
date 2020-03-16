@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Image/Homepage.jpg" type="Texture" id=1]
 [ext_resource path="res://Image/characters.png" type="Texture" id=2]
@@ -9,11 +9,6 @@
 [ext_resource path="res://Image/library.png" type="Texture" id=7]
 [ext_resource path="res://Image/missions.png" type="Texture" id=8]
 [ext_resource path="res://ExitHomepageButton.gd" type="Script" id=9]
-[ext_resource path="res://Image/mp_horizontal_bar.png" type="Texture" id=10]
-[ext_resource path="res://Image/grey_horizontal_bar.png" type="Texture" id=11]
-[ext_resource path="res://MPProgressBar.gd" type="Script" id=12]
-[ext_resource path="res://Image/horizontal_bar.png" type="Texture" id=13]
-[ext_resource path="res://HPProgressBar.gd" type="Script" id=14]
 [ext_resource path="res://FromHomeToStore.gd" type="Script" id=15]
 [ext_resource path="res://buttonMissions.gd" type="Script" id=16]
 [ext_resource path="res://buttonLibrary.gd" type="Script" id=17]
@@ -32,7 +27,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="HomePage/Control"]
-position = Vector2( 639.625, 359.711 )
+position = Vector2( 639.625, 358.854 )
 scale = Vector2( 0.213354, 0.180008 )
 texture = ExtResource( 1 )
 
@@ -177,51 +172,44 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HPProgressBar" type="TextureProgress" parent="HomePage"]
-margin_left = 46.3181
-margin_top = 13.2419
-margin_right = 599.318
-margin_bottom = 70.2419
-min_value = 1.0
-value = 40.0
-texture_under = ExtResource( 11 )
-texture_progress = ExtResource( 13 )
-script = ExtResource( 14 )
+[node name="Username" type="Label" parent="HomePage"]
+margin_left = 16.0
+margin_top = 23.0
+margin_right = 106.0
+margin_bottom = 37.0
+text = "Current User:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="HomePage/HPProgressBar"]
-margin_left = -30.2919
-margin_top = 22.0095
-margin_right = -0.29187
-margin_bottom = 36.0095
-text = "HP"
+[node name="UsernameField" type="Label" parent="HomePage"]
+margin_left = 109.0
+margin_top = 24.0
+margin_right = 204.0
+margin_bottom = 38.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MPProgressBar" type="TextureProgress" parent="HomePage"]
-margin_left = 46.0728
-margin_top = 74.6232
-margin_right = 605.073
-margin_bottom = 132.623
-value = 60.0
-texture_under = ExtResource( 11 )
-texture_progress = ExtResource( 10 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="HomePage/MPProgressBar"]
+[node name="CurrentMission" type="Label" parent="HomePage"]
 anchor_left = -0.00154575
 anchor_right = -0.00154575
-margin_left = -30.4852
-margin_top = 19.0
-margin_right = -2.4852
-margin_bottom = 39.0
-text = "MP"
+margin_left = 15.0
+margin_top = 50.0
+margin_right = 126.0
+margin_bottom = 70.0
+text = "Current Mission:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MissionField" type="Label" parent="HomePage"]
+anchor_left = -0.00154575
+anchor_right = -0.00154575
+margin_left = 127.0
+margin_top = 50.0
+margin_right = 243.0
+margin_bottom = 70.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
