@@ -10,8 +10,8 @@ var rng = RandomNumberGenerator.new()
 # enter store scene with updated userCurrency
 func _ready():
 	randomize() # somehow this is doesn't work as the seed is always the same...
-	
-	userCurrency =  10000 # needs to be API GET call to DB
+	var server = get_node("/root/Api")
+	userCurrency = server.get_currency()
 	get_node("CurrencyWidget/RichTextLabel").text = str(userCurrency)
 
 # Character summon button, can only summon if user has currency > SUMMON_COST

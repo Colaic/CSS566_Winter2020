@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Image/Homepage.jpg" type="Texture" id=1]
 [ext_resource path="res://Image/characters.png" type="Texture" id=2]
@@ -17,8 +17,10 @@
 [ext_resource path="res://FromHomeToStore.gd" type="Script" id=15]
 [ext_resource path="res://buttonMissions.gd" type="Script" id=16]
 [ext_resource path="res://buttonLibrary.gd" type="Script" id=17]
+[ext_resource path="res://Homepage.gd" type="Script" id=18]
 
 [node name="Homepage" type="Node"]
+script = ExtResource( 18 )
 
 [node name="HomePage" type="Node2D" parent="."]
 
