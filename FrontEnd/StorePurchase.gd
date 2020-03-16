@@ -11,7 +11,6 @@ var rng = RandomNumberGenerator.new()
 # enter store scene with updated userCurrency
 func _ready():
 	#randomize() # somehow this is doesn't work as the seed is always the same...
-	var server = get_node("/root/Api")
 	userCurrency = server.get_currency()
 	get_node("CurrencyWidget/RichTextLabel").text = str(userCurrency)
 
