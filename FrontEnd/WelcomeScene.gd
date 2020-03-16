@@ -53,7 +53,7 @@ func _on_LoginButton_button_up():
 		if(server._user_signed_up):
 			#Uncommented since it's not working as intended yet.
 			#get_tree().change_scene("res://UserProfile.tscn")
-			get_tree().change_scene("res://Homepage.tscn")
+			get_tree().change_scene("res://Homepage.tscn")	
 		else:
 			get_tree().change_scene("res://Homepage.tscn")
 	else:
