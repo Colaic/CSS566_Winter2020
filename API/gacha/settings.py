@@ -13,16 +13,26 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from datetime import timedelta
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!5q*v#ujpw6wkdynb%eb)-dc*231w5%z-jgcf(y^aht_@*(9h-'
+try:
+    SECRET_KEY = os.environ["SECRET_KEY"]
+    if len(SECRET_KEY) < 48:
+        raise KeyError
+except KeyError:
+    print("Error: environment variable SECRET_KEY must be set with more than 48 characters.")
+    exit(1)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ALLOWED_HOSTS = ['0.0.0.0',
                  '127.0.0.1',
@@ -34,6 +44,7 @@ ALLOWED_HOSTS = ['0.0.0.0',
 INSTALLED_APPS = [
     'db',
     'rest_framework',
+    'corsheaders',
     'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -46,6 +57,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -72,6 +84,18 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'gacha.wsgi.application'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'SIGNING_KEY': SECRET_KEY,
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases

@@ -1,0 +1,409 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://StoreBack.gd" type="Script" id=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/Coin.png-6d6a0e3563fb18360af9c2ceb67cb59e.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/Trophy.png-a8066c75727f30e7b3728de585bd386e.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/copper coin.png-607a9e4bde08936f3b65b4e5753cd876.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+load_path = "res://.import/key.png-3b5891440ae4c22ff5ec47941976f6a2.stex"
+
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+load_path = "res://.import/Lock.png-d93cae773649fef33a98a122365ea9ee.stex"
+
+[sub_resource type="StreamTexture" id=6]
+flags = 4
+load_path = "res://.import/Sledgehammer.png-eb0cbaaa2a1903bf7b0e3d38c826a2b2.stex"
+
+[sub_resource type="StreamTexture" id=7]
+flags = 4
+load_path = "res://.import/anvil.png-c4b63dd9d4e231864172a5be3e93db5b.stex"
+
+[sub_resource type="StreamTexture" id=8]
+flags = 4
+load_path = "res://.import/Clover.png-e1f6cb5fa523fb248ee08c0bec81a023.stex"
+
+[sub_resource type="StreamTexture" id=9]
+flags = 4
+load_path = "res://.import/blue-potion.png-04ccd42f5cc83d6473224f45133f49c7.stex"
+
+[sub_resource type="GDScript" id=10]
+script/source = "extends Node
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+
+func _on_Button_pressed():
+	get_tree().change_scene(\"res://Homepage.tscn\")
+"
+
+[sub_resource type="StreamTexture" id=11]
+flags = 4
+load_path = "res://.import/Experience_Potion.png-e80c5d94276c865a342fed744654c169.stex"
+
+[sub_resource type="StreamTexture" id=12]
+flags = 4
+load_path = "res://.import/potion aganist curse.png-44138972804272dd56d9d74f4f29bf40.stex"
+
+[sub_resource type="StreamTexture" id=13]
+flags = 4
+load_path = "res://.import/potion curse.png-572c6718bdbf304b6dc19e3ad7f51bf6.stex"
+
+[sub_resource type="StreamTexture" id=14]
+flags = 4
+load_path = "res://.import/Potion Increases attack.png-dde49f7e933eb428188f6523a8c28496.stex"
+
+[sub_resource type="StreamTexture" id=15]
+flags = 4
+load_path = "res://.import/Potion to increase protection.png-c4a033ea12c962a3ca729e9312eaf239.stex"
+
+[sub_resource type="StreamTexture" id=16]
+flags = 4
+load_path = "res://.import/red poison.png-0fe4e2841d75730853cb60ace5e2e6a3.stex"
+
+[sub_resource type="StreamTexture" id=17]
+flags = 4
+load_path = "res://.import/snake.png-fbeaf83cbfcefd8c66b1c83a355981a3.stex"
+
+[node name="UserProfile" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 0.916335, 0.849462 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = -0.049
+anchor_top = 0.00123316
+anchor_right = 1.0
+anchor_bottom = 1.075
+margin_left = -127.28
+margin_top = -0.887875
+margin_right = 346.0
+margin_bottom = 91.9999
+mouse_filter = 1
+color = Color( 0.2, 0.0784314, 0.239216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StoreInfo" type="ColorRect" parent="."]
+anchor_left = 2.98023e-09
+anchor_right = 2.98023e-09
+margin_left = -7.56687
+margin_top = 107.886
+margin_right = 1145.43
+margin_bottom = 716.885
+hint_tooltip = "Gold coin requires 500 currency"
+color = Color( 0.137255, 0.0666667, 0.2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnergyListColor" type="ColorRect" parent="StoreInfo"]
+margin_left = 350.0
+margin_top = 318.0
+margin_right = 865.0
+margin_bottom = 568.0
+color = Color( 0.0509804, 0.00392157, 0.0588235, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnergyGrid" type="GridContainer" parent="StoreInfo/EnergyListColor"]
+margin_left = 6.79047
+margin_top = 7.47418
+margin_right = 456.79
+margin_bottom = 257.474
+columns = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coin" type="Sprite" parent="StoreInfo/EnergyListColor/EnergyGrid"]
+position = Vector2( 44.9617, 170.991 )
+scale = Vector2( 0.126104, 0.126974 )
+texture = SubResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Trophy" type="Sprite" parent="StoreInfo/EnergyListColor/EnergyGrid"]
+position = Vector2( 147.544, 173.824 )
+scale = Vector2( 0.0676467, 0.0670155 )
+texture = SubResource( 2 )
+
+[node name="coppercoins" type="Sprite" parent="StoreInfo/EnergyListColor/EnergyGrid"]
+position = Vector2( 264.095, 166.989 )
+scale = Vector2( 0.0770808, 0.074552 )
+texture = SubResource( 3 )
+
+[node name="key" type="Sprite" parent="StoreInfo/EnergyListColor/EnergyGrid"]
+position = Vector2( 393.115, 162.398 )
+scale = Vector2( 0.141131, 0.169971 )
+texture = SubResource( 4 )
+
+[node name="lock" type="Sprite" parent="StoreInfo/EnergyListColor/EnergyGrid"]
+position = Vector2( 33.2861, 70.1618 )
+scale = Vector2( 0.0349846, 0.0315561 )
+texture = SubResource( 5 )
+
+[node name="Hammer" type="Sprite" parent="StoreInfo/EnergyListColor/EnergyGrid"]
+position = Vector2( 161.47, 76.9058 )
+scale = Vector2( 0.448285, 0.250637 )
+texture = SubResource( 6 )
+offset = Vector2( -36.2974, -57.3184 )
+
+[node name="anvil" type="Sprite" parent="StoreInfo/EnergyListColor/EnergyGrid"]
+position = Vector2( 261.094, 55.8 )
+scale = Vector2( 0.136975, 0.187446 )
+texture = SubResource( 7 )
+
+[node name="clover" type="Sprite" parent="StoreInfo/EnergyListColor/EnergyGrid"]
+position = Vector2( 400.11, 54.8348 )
+scale = Vector2( 0.157663, 0.184609 )
+texture = SubResource( 8 )
+
+[node name="Label" type="Label" parent="StoreInfo/EnergyListColor/EnergyGrid"]
+margin_right = 298.0
+margin_bottom = 14.0
+text = "Energy level up each for  500 in game currency"
+
+[node name="Label" type="Label" parent="StoreInfo/EnergyListColor"]
+margin_left = 102.404
+margin_top = 110.624
+margin_right = 204.404
+margin_bottom = 136.624
+text = "Sledge Hammer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="StoreInfo/EnergyListColor"]
+margin_left = 19.1161
+margin_top = 109.218
+margin_right = 89.1161
+margin_bottom = 135.218
+text = "Lock"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="StoreInfo/EnergyListColor"]
+anchor_right = 0.04
+anchor_bottom = 0.105
+margin_left = 236.963
+margin_top = 106.633
+margin_right = 287.963
+margin_bottom = 101.383
+text = "Anvil"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="StoreInfo/EnergyListColor"]
+margin_left = 367.89
+margin_top = 106.692
+margin_right = 439.89
+margin_bottom = 125.692
+text = "Clover"
+
+[node name="Label5" type="Label" parent="StoreInfo/EnergyListColor"]
+margin_left = 9.0
+margin_top = 220.0
+margin_right = 78.0
+margin_bottom = 244.0
+text = "Gold Coins"
+
+[node name="Label6" type="Label" parent="StoreInfo/EnergyListColor"]
+margin_left = 123.0
+margin_top = 219.0
+margin_right = 176.0
+margin_bottom = 233.0
+text = "Trophy"
+
+[node name="Label7" type="Label" parent="StoreInfo/EnergyListColor"]
+margin_left = 223.0
+margin_top = 218.0
+margin_right = 319.0
+margin_bottom = 232.0
+text = "Bronze Coins"
+
+[node name="Label8" type="Label" parent="StoreInfo/EnergyListColor"]
+margin_left = 385.661
+margin_top = 212.118
+margin_right = 431.661
+margin_bottom = 226.118
+text = "Key"
+
+[node name="HpAndMPList" type="ColorRect" parent="StoreInfo"]
+margin_left = 354.0
+margin_top = 48.0
+margin_right = 858.0
+margin_bottom = 297.0
+color = Color( 0.0509804, 0.00392157, 0.0588235, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HpGrid" type="GridContainer" parent="StoreInfo/HpAndMPList"]
+margin_left = 368.602
+margin_top = 4.78471
+margin_right = 604.602
+margin_bottom = 37.7847
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="StoreInfo/HpAndMPList/HpGrid"]
+position = Vector2( -324.663, 77.6963 )
+scale = Vector2( 0.16788, 0.158291 )
+texture = SubResource( 9 )
+script = SubResource( 10 )
+
+[node name="experience potion" type="Sprite" parent="StoreInfo/HpAndMPList/HpGrid"]
+position = Vector2( -188.195, 79.7269 )
+scale = Vector2( 0.394668, 0.243777 )
+texture = SubResource( 11 )
+
+[node name="potion against curse" type="Sprite" parent="StoreInfo/HpAndMPList/HpGrid"]
+position = Vector2( -69.0801, 68.2784 )
+scale = Vector2( 0.0633969, 0.101505 )
+texture = SubResource( 12 )
+
+[node name="potion curse" type="Sprite" parent="StoreInfo/HpAndMPList/HpGrid"]
+position = Vector2( 46.7897, 60.2146 )
+scale = Vector2( 0.336613, 0.299557 )
+texture = SubResource( 13 )
+
+[node name="Sprite2" type="Sprite" parent="StoreInfo/HpAndMPList/HpGrid"]
+position = Vector2( -329.574, 185.412 )
+scale = Vector2( 0.0588579, 0.0535553 )
+texture = SubResource( 14 )
+
+[node name="potion protection" type="Sprite" parent="StoreInfo/HpAndMPList/HpGrid"]
+position = Vector2( -187.923, 177.847 )
+scale = Vector2( 0.213619, 0.172002 )
+texture = SubResource( 15 )
+
+[node name="Sprite3" type="Sprite" parent="StoreInfo/HpAndMPList/HpGrid"]
+position = Vector2( 52.382, 182.94 )
+scale = Vector2( 0.138893, 0.132723 )
+texture = SubResource( 16 )
+
+[node name="Sprite4" type="Sprite" parent="StoreInfo/HpAndMPList/HpGrid"]
+position = Vector2( -64.2236, 185.676 )
+scale = Vector2( 0.0741904, 0.0781669 )
+texture = SubResource( 17 )
+
+[node name="Label" type="Label" parent="StoreInfo/HpAndMPList"]
+margin_left = 12.0
+margin_top = 11.0
+margin_right = 225.0
+margin_bottom = 46.0
+mouse_filter = 1
+text = "Hp and Mp Potion level up each for 300 in game currency"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="StoreInfo/HpAndMPList"]
+margin_left = 17.0
+margin_top = 116.0
+margin_right = 97.0
+margin_bottom = 146.0
+text = "Blue potion"
+
+[node name="Label3" type="Label" parent="StoreInfo/HpAndMPList"]
+margin_left = 117.0
+margin_top = 115.0
+margin_right = 243.0
+margin_bottom = 133.0
+text = "Experience potion"
+
+[node name="Label4" type="Label" parent="StoreInfo/HpAndMPList"]
+margin_left = 391.0
+margin_top = 113.0
+margin_right = 464.0
+margin_bottom = 133.0
+text = "Potion Curse"
+
+[node name="Label5" type="Label" parent="StoreInfo/HpAndMPList"]
+margin_left = 8.18381
+margin_top = 223.237
+margin_right = 115.184
+margin_bottom = 241.237
+text = "Increase Attack"
+
+[node name="Label6" type="Label" parent="StoreInfo/HpAndMPList"]
+margin_left = 124.486
+margin_top = 224.882
+margin_right = 249.486
+margin_bottom = 238.882
+text = "Increase Protection"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="StoreInfo/HpAndMPList"]
+margin_left = 281.625
+margin_top = 227.828
+margin_right = 321.625
+margin_bottom = 241.828
+text = "Snake"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label8" type="Label" parent="StoreInfo/HpAndMPList"]
+margin_left = 390.85
+margin_top = 223.671
+margin_right = 461.85
+margin_bottom = 237.671
+text = "Red Poison"
+
+[node name="Label9" type="Label" parent="StoreInfo/HpAndMPList"]
+margin_left = 261.258
+margin_top = 117.427
+margin_right = 348.258
+margin_bottom = 131.427
+text = "Against Curse"
+
+[node name="Button" type="Button" parent="."]
+margin_left = 46.1667
+margin_top = 146.29
+margin_right = 145.167
+margin_bottom = 183.29
+text = "Back"
+expand_icon = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="StoreInfo/HpAndMPList/HpGrid/Sprite" method="_on_Button_pressed"]
