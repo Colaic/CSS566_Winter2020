@@ -459,7 +459,6 @@ custom_colors/font_color_shadow = Color( 0.701961, 0.682353, 0.580392, 1 )
 text = "Currency :"
 align = 1
 valign = 1
-percent_visible = -0.125
 __meta__ = {
 "_edit_use_anchors_": false
 }
