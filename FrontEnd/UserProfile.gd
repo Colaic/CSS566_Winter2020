@@ -18,3 +18,10 @@ func _ready():
 	currency.text = str(server.get_currency())
 	num_chars.text = str(len(server.get_characters()))
 	num_items.text = str(len(server.get_items()))
+	
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
