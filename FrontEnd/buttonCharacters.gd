@@ -17,5 +17,5 @@ func _ready():
 #	pass
 
 func _on_buttonCharacters_pressed():
-	get_tree().change_scene("res://CharactersList.tscn")
+	get_tree().change_scene("res://Characters.tscn")
 	pass # Replace with function body.
