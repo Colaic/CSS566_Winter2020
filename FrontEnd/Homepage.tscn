@@ -187,6 +187,7 @@ margin_left = 109.0
 margin_top = 24.0
 margin_right = 204.0
 margin_bottom = 38.0
+text = "<username>"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -210,6 +211,7 @@ margin_left = 127.0
 margin_top = 50.0
 margin_right = 243.0
 margin_bottom = 70.0
+text = "<mission_num>"
 __meta__ = {
 "_edit_use_anchors_": false
 }

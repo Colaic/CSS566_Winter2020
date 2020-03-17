@@ -50,8 +50,15 @@ func _on_LoginButton_button_up():
 		if(server._user_signed_up):
 			#Uncommented since it's not working as intended yet.
 			#get_tree().change_scene("res://UserProfile.tscn")
+			#Set the default currency and mission number.
 			server.set_currency(100000);
 			server.set_mission_num(1)
+			
+			#Add thee characters
+			server.add_character( 0, "Silver Knight")
+			server.add_character( 1, "Gold Knight")
+			server.add_character( 2, "Warrior")
+			
 			get_tree().change_scene("res://Homepage.tscn")	
 		else:
 			get_tree().change_scene("res://Homepage.tscn")

@@ -15,11 +15,6 @@ func _ready():
 		#Find out the extensions
 		var extension = str(i)
 		character_nodes.append(get_node("BackgroundPanel/CharacterPanel" + extension))
-
-	#Add thee characters if user just signed up.
-	if(server._user_just_signed_up):
-		for i in range(3):
-			server.add_character( i, CHARACTER_NAMES[i])
 			
 	#Get the current charactesrs, and make appropriate ones visible.
 	var characters = server.get_characters()
